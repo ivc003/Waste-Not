@@ -54,6 +54,17 @@
     </div>
   </div>
 
+  <!-- Store Products Modal -->
+  <div class="modal" id="store-products-modal" style="display: none;">
+    <div class="modal-content store-products-modal-content">
+      <span class="modal-close" id="close-store-products-modal">&times;</span>
+      <h2 id="store-products-title">Store Products</h2>
+      <div id="store-products-container" class="store-products-container">
+        <!-- Product cards will be inserted here -->
+      </div>
+    </div>
+  </div>
+
   <!-- Floating Location & Radius Bar -->
   <div class="floating-filter-bar">
     <div class="floating-filter-content">
@@ -129,7 +140,7 @@
       <!-- Freshness Filter -->
       <div class="filter-section">
         <label for="freshnessInput" class="filter-label">Freshness (Days Before Best By Date)</label>
-        <input type="number" id="freshnessInput" class="freshness-input" min="0" max="365" value="0" placeholder="Enter number of days" aria-label="Freshness filter in days">
+        <input type="number" id="freshnessInput" class="freshness-input" min="0" max="365" value="7" placeholder="Enter number of days" aria-label="Freshness filter in days">
         <p class="filter-hint">Shows products expiring within this many days</p>
       </div>
 
@@ -229,6 +240,7 @@
   <script src="filter-menu.js"></script>
   <script src="auth.js"></script>
   <script src="landing.js"></script>
+  <script src="stores.js"></script>
   <script src="map.js"></script>
 </body>
 </html>

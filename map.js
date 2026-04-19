@@ -1,6 +1,59 @@
 // Mapbox configuration and initialization
 console.log('Map.js script loaded');
 
+// Fuzzy matching functions
+// Calculate Levenshtein distance between two strings
+function levenshteinDistance(str1, str2) {
+  const len1 = str1.length;
+  const len2 = str2.length;
+  const matrix = Array(len2 + 1).fill(null).map(() => Array(len1 + 1).fill(0));
+
+  for (let i = 0; i <= len1; i++) {
+    matrix[0][i] = i;
+  }
+
+  for (let j = 0; j <= len2; j++) {
+    matrix[j][0] = j;
+  }
+
+  for (let j = 1; j <= len2; j++) {
+    for (let i = 1; i <= len1; i++) {
+      const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+      matrix[j][i] = Math.min(
+        matrix[j][i - 1] + 1,
+        matrix[j - 1][i] + 1,
+        matrix[j - 1][i - 1] + indicator
+      );
+    }
+  }
+
+  return matrix[len2][len1];
+}
+
+// Check if two strings are similar enough (fuzzy match)
+// Returns true if match is good enough, false otherwise
+function isFuzzyMatch(input, target, threshold = 0.7) {
+  const input_lower = input.toLowerCase().trim();
+  const target_lower = target.toLowerCase().trim();
+
+  // Exact match
+  if (input_lower === target_lower) {
+    return true;
+  }
+
+  // Substring match (e.g., "chicken" matches "chicken breast")
+  if (target_lower.includes(input_lower) || input_lower.includes(target_lower)) {
+    return true;
+  }
+
+  // Fuzzy match using Levenshtein distance
+  const maxLen = Math.max(input_lower.length, target_lower.length);
+  const distance = levenshteinDistance(input_lower, target_lower);
+  const similarity = 1 - (distance / maxLen);
+
+  return similarity >= threshold;
+}
+
 // Check that Mapbox GL JS is loaded
 console.log('Mapbox GL JS Loaded:', typeof mapboxgl !== 'undefined' ? 'Yes' : 'No');
 console.log('Turf loaded:', typeof turf !== 'undefined' ? 'Yes' : 'No');
@@ -23,9 +76,47 @@ const restaurants = {
 
 console.log('Restaurant Coordinates:', restaurants);
 
-// Function to convert miles to kilometers
-function milesToKm(miles) {
-  return miles * 1.60934;
+// Store markers management
+let storeMarkers = [];
+let filteredStores = [];
+
+// Function to check if a point is within a radius
+function isPointInRadius(point, center, radiusMiles) {
+  const from = turf.point(center);
+  const to = turf.point(point);
+  const distance = turf.distance(from, to, { units: 'miles' });
+  return distance <= radiusMiles;
+}
+
+// Function to filter stores by radius
+function filterStoresByRadius(radiusMiles, centerCoords) {
+  if (!window.allStores) {
+    console.warn('allStores data not loaded yet');
+    return [];
+  }
+  
+  return window.allStores.filter(store => {
+    return isPointInRadius([store.longitude, store.latitude], centerCoords, radiusMiles);
+  });
+}
+
+// Function to filter stores by shopping list products
+function filterStoresByShoppingList(stores) {
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
+  
+  // If shopping list is empty, return all stores
+  if (shoppingList.length === 0) {
+    return stores;
+  }
+  
+  // Filter stores that have at least one product from the shopping list using fuzzy matching
+  return stores.filter(store => {
+    return shoppingList.some(product =>
+      store.products.some(storeProduct =>
+        isFuzzyMatch(product, storeProduct)
+      )
+    );
+  });
 }
 
 // Function to create a circle GeoJSON from center point and radius
@@ -83,6 +174,48 @@ function initMap() {
     // Optional: Add zoom and rotation controls
     map.addControl(new mapboxgl.NavigationControl());
     console.log('✅ Navigation control added');
+
+    // Add all grocery store markers on initial load
+    if (window.allStores && window.allStores.length > 0) {
+      console.log('Adding store markers to map. Total stores:', window.allStores.length);
+      
+      window.allStores.forEach((store, index) => {
+        // Create a red pin marker element
+        const markerElement = document.createElement('div');
+        markerElement.className = 'store-marker';
+        markerElement.style.width = '32px';
+        markerElement.style.height = '32px';
+        markerElement.style.backgroundImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff0000" stroke="white" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2" fill="white"/></svg>')`;
+        markerElement.style.backgroundSize = 'contain';
+        markerElement.style.backgroundRepeat = 'no-repeat';
+        markerElement.style.backgroundPosition = 'center';
+        markerElement.style.cursor = 'pointer';
+        
+        // Create a popup for the store marker
+        const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+          `<strong>${store.storeName}</strong><br/>${store.storeAddress}<br/><small>${store.uniqueProducts} products</small>`
+        );
+        
+        // Create and add the marker
+        const marker = new mapboxgl.Marker(markerElement)
+          .setLngLat([store.longitude, store.latitude])
+          .setPopup(popup)
+          .addTo(map);
+        
+        storeMarkers.push({
+          marker: marker,
+          store: store,
+          element: markerElement
+        });
+      });
+      
+      console.log('✅ All store markers added to map');
+      
+      // Initialize filtered stores list
+      filteredStores = [...window.allStores];
+    } else {
+      console.warn('No stores data available');
+    }
 
     // Create markers for each restaurant (but don't add to map yet)
     const markers = {};
@@ -180,6 +313,18 @@ function initMap() {
           const radiusValue = parseInt(radiusSlider.value);
           updateRadiusCircle(coords, radiusValue);
           
+          // Filter stores by radius
+          filteredStores = filterStoresByRadius(radiusValue, coords);
+          // Apply shopping list filter
+          filteredStores = filterStoresByShoppingList(filteredStores);
+          console.log('Filtered stores by radius:', filteredStores.length);
+          
+          // Update store markers visibility
+          updateStoreMarkersVisibility(filteredStores);
+          
+          // Update stores list in side menu
+          updateStoresListDisplay(filteredStores);
+          
           // Calculate offset for side menu and floating bar
           // Side menu is 250px wide, floating bar is ~80px tall
           const sideMenuWidth = 250;
@@ -213,6 +358,12 @@ function initMap() {
             map.removeLayer('radius-circle-stroke');
             map.removeSource('radius-circle');
           }
+          
+          // Show all stores again, but apply shopping list filter
+          filteredStores = [...window.allStores];
+          filteredStores = filterStoresByShoppingList(filteredStores);
+          updateStoreMarkersVisibility(filteredStores);
+          updateStoresListDisplay(filteredStores);
         }
       });
     }
@@ -225,13 +376,45 @@ function initMap() {
         // Update the radius display value
         document.getElementById('floatingRadiusValue').textContent = radiusValue;
         
-        // If a restaurant is selected, update the circle
+        // If a restaurant is selected, update the circle and filter stores
         if (currentSelectedRestaurant && restaurants[currentSelectedRestaurant]) {
           const coords = restaurants[currentSelectedRestaurant];
           updateRadiusCircle(coords, radiusValue);
+          
+          // Re-filter stores based on new radius
+          filteredStores = filterStoresByRadius(radiusValue, coords);
+          // Apply shopping list filter
+          filteredStores = filterStoresByShoppingList(filteredStores);
+          console.log('Filtered stores by new radius:', filteredStores.length);
+          
+          // Update store markers visibility
+          updateStoreMarkersVisibility(filteredStores);
+          
+          // Update stores list in side menu
+          updateStoresListDisplay(filteredStores);
         }
       });
     }
+    
+    // Function to update store markers visibility
+    function updateStoreMarkersVisibility(visibleStores) {
+      const visibleStoreSet = new Set(visibleStores.map(s => `${s.storeName}-${s.storeAddress}`));
+      
+      storeMarkers.forEach(({ marker, store, element }) => {
+        const storeKey = `${store.storeName}-${store.storeAddress}`;
+        if (visibleStoreSet.has(storeKey)) {
+          // Make marker visible
+          element.style.display = 'block';
+          element.style.opacity = '1';
+        } else {
+          // Hide marker
+          element.style.display = 'none';
+          element.style.opacity = '0';
+        }
+      });
+    }
+    
+
   } catch (error) {
     console.error('❌ Error initializing map:', error);
     console.error('Error details:', error.message);
