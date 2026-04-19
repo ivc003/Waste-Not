@@ -1,3 +1,97 @@
+// -----------------------------
+// Data source config — swap 'csv' to 'json' to use dc_restaurants_ingredients.json instead
+// -----------------------------
+const DATA_SOURCE = 'json';
+
+let inventoryData = []; // populated on load
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',');
+  return lines.slice(1).map(line => {
+    const vals = line.split(',');
+    const obj = {};
+    headers.forEach((h, i) => obj[h.trim()] = (vals[i] || '').trim());
+    return obj;
+  });
+}
+
+function scoreItem(item) {
+  // ML urgency score — plug in model_coefficients.json here later
+  // Higher score = more urgent to move
+  const daysLeft = parseFloat(item.days_to_expiry) || 99;
+  const qty = parseFloat(item.quantity_available) || 0;
+  const priceDelta = parseFloat(item.original_prices) - parseFloat(item.discounted_prices);
+  return (qty * Math.max(priceDelta, 0)) / Math.pow(daysLeft, 2);
+}
+
+async function loadInventory() {
+  if (DATA_SOURCE === 'csv') {
+    const res = await fetch('master_dataset.csv');
+    const text = await res.text();
+    inventoryData = parseCSV(text).filter(r => r.is_available === '1');
+  } else {
+    const res = await fetch('dc_restaurants_ingredients.json');
+    const json = await res.json();
+    // Deduplicated unique ingredients — one entry per ingredient
+    const seen = new Set();
+    inventoryData = Object.values(json).flatMap(r =>
+      r.ingredients
+        .filter(ing => { if (seen.has(ing)) return false; seen.add(ing); return true; })
+        .map(ing => ({
+          store_products: ing,
+          store_names: '',
+          store_categories: r.cuisine,
+          days_to_expiry: 'N/A',
+          discounted_prices: 'N/A',
+          original_prices: 'N/A'
+        }))
+    );
+  }
+}
+
+function renderResults(term) {
+  const container = document.getElementById('search-results');
+  if (!container) return;
+
+  if (!term) { container.innerHTML = ''; return; }
+
+  const matches = inventoryData
+    .filter(r => r.store_products.toLowerCase().includes(term.toLowerCase()))
+    .sort((a, b) => scoreItem(b) - scoreItem(a))
+    .slice(0, 10);
+
+  if (!matches.length) {
+    container.innerHTML = '<p class="no-products">No matches found.</p>';
+    return;
+  }
+
+  container.innerHTML = matches.map(r => {
+    const daysLabel = r.days_to_expiry !== 'N/A'
+      ? `<span class="result-expiry">${r.days_to_expiry}d left</span>`
+      : '';
+    const priceLabel = r.discounted_prices !== 'N/A'
+      ? `<span class="result-price">$${parseFloat(r.discounted_prices).toFixed(2)}</span>`
+      : '';
+    return `
+      <div class="search-result-item" data-product="${r.store_products}">
+        <div class="result-name">${r.store_products}</div>
+        <div class="result-meta">${r.store_names} ${daysLabel} ${priceLabel}</div>
+      </div>`;
+  }).join('');
+
+  container.querySelectorAll('.search-result-item').forEach(el => {
+    el.addEventListener('click', () => {
+      addToShoppingList(el.dataset.product);
+      searchInput.value = '';
+      container.innerHTML = '';
+    });
+  });
+}
+
+loadInventory();
+
+// -----------------------------
 // Side Menu Tab Interactions
 
 const sideTabs = document.querySelectorAll('.side-menu-tab');
@@ -271,15 +365,19 @@ document.addEventListener('DOMContentLoaded', () => {
 const searchInput = document.querySelector('.filter-search');
 
 if (searchInput) {
+  let debounceTimer;
+  searchInput.addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => renderResults(e.target.value.trim()), 200);
+  });
+
   searchInput.addEventListener('keypress', (e) => {
-    // Handle Enter key press
     if (e.key === 'Enter') {
       const searchTerm = e.target.value.trim();
       if (searchTerm) {
-        // Add to shopping list
         addToShoppingList(searchTerm);
-        // Clear the search bar
         searchInput.value = '';
+        document.getElementById('search-results').innerHTML = '';
       }
     }
   });

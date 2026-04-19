@@ -771,6 +771,58 @@ body {
   box-shadow: 0 0 0 3px rgba(43, 120, 33, 0.1);
 }
 
+.search-results {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 8px 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-result-item:hover {
+  background: #f0f7ee;
+  border-color: #2b7821;
+}
+
+.result-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222;
+  text-transform: capitalize;
+}
+
+.result-meta {
+  font-size: 0.78rem;
+  color: #666;
+  margin-top: 2px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.result-expiry {
+  background: #fff3cd;
+  color: #856404;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+}
+
+.result-price {
+  color: #2b7821;
+  font-weight: 600;
+}
+
 /* Upload Button */
 .upload-label {
   display: block;

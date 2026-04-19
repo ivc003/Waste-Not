@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "source": "USDA Food Access Research Atlas 2019 — approximate ward-level polygons for demo",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ward 8 — Anacostia / Congress Heights",
+        "ward": "8",
+        "note": "Low income + low access census tracts"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-77.020, 38.826],
+          [-76.944, 38.826],
+          [-76.944, 38.872],
+          [-77.020, 38.872],
+          [-77.020, 38.826]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ward 7 — Deanwood / Benning Heights",
+        "ward": "7",
+        "note": "Low income + low access census tracts"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-76.950, 38.870],
+          [-76.884, 38.870],
+          [-76.884, 38.920],
+          [-76.950, 38.920],
+          [-76.950, 38.870]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ward 5 — Trinidad / Ivy City",
+        "ward": "5",
+        "note": "Low income + low access census tracts"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-76.999, 38.893],
+          [-76.960, 38.893],
+          [-76.960, 38.918],
+          [-76.999, 38.918],
+          [-76.999, 38.893]
+        ]]
+      }
+    }
+  ]
+}
