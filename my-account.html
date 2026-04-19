@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Waste Not</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Banner -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand-section">
+        <a href="landing.html" class="navbar-brand">Waste Not</a>
+        <span class="navbar-subtitle">Combatting Climate Change and Connecting Needs</span>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="why-this-matters.html">Why This Matters</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="login.html" id="auth-button">Login</a></li>
+        <li><a href="#" class="cart-icon" title="Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- My Account Container -->
+  <div class="account-container">
+    <!-- Side Menu -->
+    <aside class="account-sidebar">
+      <div class="account-tabs">
+        <button class="account-tab active" data-tab="profile">My Profile</button>
+        <button class="account-tab" data-tab="menus">My Menus</button>
+        <button class="account-tab" data-tab="orders">Order History</button>
+        <button class="account-tab logout-btn" id="logout-btn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="account-content">
+      <!-- My Profile Tab -->
+      <div class="account-tab-content active" id="profile-tab">
+        <h1>My Profile</h1>
+        <div class="profile-section">
+          <div class="profile-field">
+            <label>Name:</label>
+            <p id="profile-name">John Doe</p>
+          </div>
+          <div class="profile-field">
+            <label>Email:</label>
+            <p id="profile-email">john@example.com</p>
+          </div>
+          <div class="profile-field">
+            <label>Phone Number:</label>
+            <p id="profile-phone">(555) 123-4567</p>
+          </div>
+          <div class="profile-field">
+            <label>Address:</label>
+            <div class="address-display">
+              <p id="profile-address">123 Main St, Washington, DC 20001</p>
+              <button class="change-address-btn" id="change-address-btn">Change Address</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Change Address Modal -->
+        <div class="modal" id="address-modal" style="display: none;">
+          <div class="modal-content">
+            <span class="modal-close" id="close-modal">&times;</span>
+            <h2>Change Address</h2>
+            <form id="address-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="new-street">Street Address:</label>
+                  <input type="text" id="new-street" name="street" required>
+                </div>
+                <div class="form-group">
+                  <label for="new-apt">Apt/Suite:</label>
+                  <input type="text" id="new-apt" name="apt" placeholder="Optional">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="new-city">City:</label>
+                  <input type="text" id="new-city" name="city" required>
+                </div>
+                <div class="form-group">
+                  <label for="new-state">State:</label>
+                  <input type="text" id="new-state" name="state" maxlength="2" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="new-zip">ZIP Code:</label>
+                  <input type="text" id="new-zip" name="zip" required>
+                </div>
+                <div class="form-group">
+                  <label for="new-country">Country:</label>
+                  <input type="text" id="new-country" name="country" value="USA" required>
+                </div>
+              </div>
+              <button type="submit" class="login-submit">Save Address</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- My Menus Tab -->
+      <div class="account-tab-content" id="menus-tab">
+        <div class="menus-header">
+          <h1>My Menus</h1>
+          <button class="create-menu-btn" id="create-menu-btn">+ Create New Menu</button>
+        </div>
+      </div>
+
+      <!-- Create Menu Modal -->
+      <div class="modal" id="menu-modal" style="display: none;">
+        <div class="modal-content">
+          <span class="modal-close" id="close-menu-modal">&times;</span>
+          <h2>Create New Menu</h2>
+          <form id="menu-form">
+            <div class="form-group">
+              <label for="menu-name">Menu Name:</label>
+              <input type="text" id="menu-name" name="menuName" placeholder="e.g., Weekly Breakfast Ideas" required>
+            </div>
+            <div class="form-group">
+              <label for="menu-description">Description (Optional):</label>
+              <textarea id="menu-description" name="description" placeholder="Describe your menu..." rows="3"></textarea>
+            </div>
+            <button type="submit" class="login-submit">Create Menu</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Add Recipe Modal -->
+      <div class="modal" id="recipe-modal" style="display: none;">
+        <div class="modal-content">
+          <span class="modal-close" id="close-recipe-modal">&times;</span>
+          <h2 id="recipe-modal-title">Add Recipe</h2>
+          <form id="recipe-form">
+            <div class="form-group">
+              <label for="recipe-name">Recipe Name:</label>
+              <input type="text" id="recipe-name" name="recipeName" placeholder="e.g., Veggie Scramble" required>
+            </div>
+            <div class="form-group">
+              <label for="recipe-ingredients">Ingredients (one per line):</label>
+              <textarea id="recipe-ingredients" name="ingredients" placeholder="Eggs&#10;Bell Peppers&#10;Spinach" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="recipe-instructions">Instructions (Optional):</label>
+              <textarea id="recipe-instructions" name="instructions" placeholder="Step-by-step instructions..." rows="4"></textarea>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="submit" class="login-submit" id="recipe-submit-btn">Add Recipe</button>
+              <button type="button" class="login-submit" id="delete-recipe-btn" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); display: none;">Delete Recipe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Order History Tab -->
+      <div class="account-tab-content" id="orders-tab">
+        <h1>Order History</h1>
+        <div class="orders-container">
+          <p class="no-orders-message">No orders have been placed yet.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="my-account.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waste Not</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Mapbox GL JS CSS -->
+  <link
+    href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
+    rel="stylesheet"
+  />
+  
+  <!-- Turf.js for geospatial calculations -->
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  
+  <!-- Mapbox GL JS ES Module -->
+  <script src="map.js" type="module"></script>
+</head>
+<body>
+  <!-- Navigation Banner -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand-section">
+        <a href="landing.html" class="navbar-brand">Waste Not</a>
+        <span class="navbar-subtitle">Combatting Climate Change and Connecting Needs</span>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="why-this-matters.html">Why This Matters</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="login.html" id="auth-button">Login</a></li>
+        <li><a href="#" class="cart-icon" title="Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cart-modal" style="display: none;">
+    <div class="modal-content cart-modal-content">
+      <span class="modal-close" id="close-cart-modal">&times;</span>
+      <h2>Shopping Cart</h2>
+      <div id="cart-items-list" class="cart-items-list">
+        <p class="empty-cart-message">There are no items in cart</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Location & Radius Bar -->
+  <div class="floating-filter-bar">
+    <div class="floating-filter-content">
+      <div class="floating-filter-group">
+        <label for="floatingLocationSelect" class="floating-filter-label">Location:</label>
+        <select id="floatingLocationSelect" class="floating-location-dropdown">
+          <option value="">Select a location</option>
+          <option value="restaurant-x">Restaurant X</option>
+          <option value="restaurant-y">Restaurant Y</option>
+          <option value="restaurant-z">Restaurant Z</option>
+        </select>
+      </div>
+      
+      <div class="floating-filter-group">
+        <label for="floatingRadiusSlider" class="floating-filter-label">Radius:</label>
+        <div class="floating-radius-wrapper">
+          <input type="range" id="floatingRadiusSlider" class="floating-radius-slider" min="1" max="50" value="5" aria-label="Search radius in miles">
+          <span class="floating-radius-value"><span id="floatingRadiusValue">5</span> miles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side Menu -->
+  <aside class="side-menu">
+    <!-- To Product View Link -->
+    <div class="product-view-link-container">
+      <a href="#product-view" class="product-view-link">Click Here to Browse Products -> </a>
+    </div>
+
+    <div class="side-menu-tabs">
+      <button class="side-menu-tab active" data-tab="filters">Filters</button>
+      <button class="side-menu-tab" data-tab="stores">Stores</button>
+    </div>
+
+    <!-- Filters Tab Content -->
+    <div class="side-menu-content" id="filters-tab">
+      <!-- Search Bar -->
+      <div class="filter-section">
+        <input type="text" class="filter-search" placeholder="Search for a specific product" aria-label="Search for products">
+      </div>
+
+      <!-- My Menus Dropdown -->
+      <div class="filter-section">
+        <label class="select-label">My Menus:</label>
+        <div class="menus-select-container">
+          <div id="menus-list" class="menus-list">
+            <p class="no-menus-text">No menus created yet. Create one in My Account.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible Products Section -->
+      <div class="filter-section">
+        <button class="collapsible-header" aria-expanded="true" aria-controls="productsList">
+          <span class="collapsible-icon">▼</span> Shopping List (0)
+        </button>
+        <div class="collapsible-content" id="productsList">
+          <div class="products-list">
+            <p class="no-products">No products selected. Use search or upload menu to add products.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Price Range Slider -->
+      <div class="filter-section">
+        <label class="filter-label">Max Price: $<span id="maxPrice">50</span></label>
+        <div class="price-slider-container">
+          <input type="range" id="maxPriceSlider" class="price-slider price-slider-max" min="0" max="100" value="50" aria-label="Maximum price">
+        </div>
+      </div>
+
+      <!-- Freshness Filter -->
+      <div class="filter-section">
+        <label for="freshnessInput" class="filter-label">Freshness (Days Before Best By Date)</label>
+        <input type="number" id="freshnessInput" class="freshness-input" min="0" max="365" value="0" placeholder="Enter number of days" aria-label="Freshness filter in days">
+        <p class="filter-hint">Shows products expiring within this many days</p>
+      </div>
+
+      <!-- Availability Date Range Filter -->
+      <div class="filter-section">
+        <label class="filter-label">Availability Date Range</label>
+        <div class="date-range-container">
+          <div class="date-input-group">
+            <label for="availabilityStartDate" class="date-label">From:</label>
+            <input type="date" id="availabilityStartDate" class="availability-date" aria-label="Availability start date">
+          </div>
+          <div class="date-input-group">
+            <label for="availabilityEndDate" class="date-label">To:</label>
+            <input type="date" id="availabilityEndDate" class="availability-date" aria-label="Availability end date">
+          </div>
+        </div>
+      </div>
+
+      <!-- Apply Filters Button -->
+      <div class="filter-section">
+        <button class="apply-filters-btn">Apply Filters</button>
+      </div>
+    </div>
+
+    <!-- Stores Tab Content -->
+    <div class="side-menu-content" id="stores-tab" hidden>
+      <div class="stores-list">
+        <p class="no-stores">Apply filters to see available stores.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Map Container -->
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+
+  <!-- Initialize sample menus before loading filter-menu.js -->
+  <script>
+    (function initializeSampleMenus() {
+      const menus = JSON.parse(localStorage.getItem('userMenus') || '[]');
+      
+      // Check if sample menus exist
+      const hasSampleMenus = menus.some(m => m.id === 1 || m.id === 2);
+      
+      // Only initialize if sample menus don't exist
+      if (!hasSampleMenus) {
+        const sampleMenus = [
+          {
+            id: 1,
+            name: 'Weekly Breakfast Ideas',
+            description: '',
+            recipes: [
+              {
+                id: 101,
+                name: 'Veggie Scramble',
+                ingredients: ['Eggs', 'Bell Peppers', 'Spinach', 'Onions']
+              },
+              {
+                id: 102,
+                name: 'Smoothie Bowl',
+                ingredients: ['Greek Yogurt', 'Berries', 'Granola', 'Honey']
+              },
+              {
+                id: 103,
+                name: 'Avocado Toast',
+                ingredients: ['Whole Wheat Bread', 'Avocado', 'Lime', 'Cherry Tomatoes']
+              }
+            ]
+          },
+          {
+            id: 2,
+            name: 'Budget-Friendly Dinners',
+            description: '',
+            recipes: [
+              {
+                id: 201,
+                name: 'Bean Chili',
+                ingredients: ['Canned Beans', 'Tomatoes', 'Onions', 'Spices']
+              },
+              {
+                id: 202,
+                name: 'Pasta Primavera',
+                ingredients: ['Pasta', 'Mixed Vegetables', 'Garlic', 'Olive Oil']
+              }
+            ]
+          }
+        ];
+        
+        // Add sample menus to existing menus
+        const allMenus = [...sampleMenus, ...menus];
+        localStorage.setItem('userMenus', JSON.stringify(allMenus));
+      }
+    })();
+  </script>
+
+  <script src="filter-menu.js"></script>
+  <script src="auth.js"></script>
+  <script src="landing.js"></script>
+</body>
+</html>

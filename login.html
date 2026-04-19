@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Waste Not</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Banner -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-brand-section">
+        <a href="landing.html" class="navbar-brand">Waste Not</a>
+        <span class="navbar-subtitle">Combatting Climate Change and Connecting Needs</span>
+      </div>
+      <ul class="navbar-menu">
+        <li><a href="why-this-matters.html">Why This Matters</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="login.html" class="active" id="auth-button">Login</a></li>
+        <li><a href="#" class="cart-icon" title="Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Login Content -->
+  <div class="content-container">
+    <div class="login-form-container">
+      <!-- Tabs -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Login</button>
+        <button class="auth-tab" data-tab="signup">Sign Up</button>
+      </div>
+
+      <!-- Login Form -->
+      <form class="auth-form active" id="login-tab">
+        <h1>Login</h1>
+        <div class="form-group">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" name="password">
+        </div>
+        <button type="submit" class="login-submit">Sign In</button>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form class="auth-form" id="signup-tab">
+        <h1>Sign Up</h1>
+        
+        <!-- First Name & Email Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-firstname">First Name:</label>
+            <input type="text" id="signup-firstname" name="firstname" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="email" required>
+          </div>
+        </div>
+
+        <!-- Last Name & Phone Number Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-lastname">Last Name:</label>
+            <input type="text" id="signup-lastname" name="lastname" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-phone">Phone Number:</label>
+            <input type="tel" id="signup-phone" name="phone">
+          </div>
+        </div>
+
+        <!-- Password & Confirm Password Row -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password:</label>
+            <input type="password" id="signup-confirm-password" name="confirmPassword" required>
+          </div>
+        </div>
+
+        <!-- Address Details Section -->
+        <div class="address-section">
+          <h3>Delivery Address</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="signup-address">Street Address:</label>
+              <input type="text" id="signup-address" name="address" placeholder="123 Main St">
+            </div>
+            <div class="form-group">
+              <label for="signup-address2">Apt/Suite (Optional):</label>
+              <input type="text" id="signup-address2" name="address2" placeholder="Apt 4B">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="signup-city">City:</label>
+              <input type="text" id="signup-city" name="city">
+            </div>
+            <div class="form-group">
+              <label for="signup-state">State:</label>
+              <input type="text" id="signup-state" name="state" maxlength="2" placeholder="DC">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="signup-zip">ZIP Code:</label>
+              <input type="text" id="signup-zip" name="zip">
+            </div>
+            <div class="form-group">
+              <label for="signup-country">Country:</label>
+              <input type="text" id="signup-country" name="country" value="USA">
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="login-submit">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>
