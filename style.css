@@ -2516,30 +2516,190 @@ textarea:focus {
   background-color: #1f5917;
 }
 
-/* ===== QUANTITY INPUT ===== */
-.quantity-input {
-  width: 80px;
-  padding: 0.5rem;
-  font-size: 0.9rem;
+/* ===== QUANTITY STEPPER ===== */
+.qty-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  text-align: center;
+  border-radius: 6px;
+  overflow: hidden;
+  width: fit-content;
 }
 
-.quantity-input:focus {
-  outline: none;
-  border-color: #2b7821;
-  box-shadow: 0 0 5px rgba(43, 120, 33, 0.3);
+.qty-btn {
+  background: #f5f5f5;
+  border: none;
+  padding: 0.4rem 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #333;
+  transition: background 0.15s;
+  line-height: 1;
 }
+
+.qty-btn:hover { background: #e0e0e0; }
+
+.quantity-input {
+  width: 44px;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  border: none;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  text-align: center;
+  background: #fff;
+}
+
+.quantity-input:focus { outline: none; }
 
 .quantity-input::-webkit-outer-spin-button,
-.quantity-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.quantity-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+.quantity-input[type=number] { -moz-appearance: textfield; appearance: textfield; }
+
+/* ===== CHECKOUT MODAL ===== */
+#checkout-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
 }
 
-.quantity-input[type=number] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+.checkout-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 420px;
+  max-width: 95vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.checkout-box h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  color: #1a1a2e;
+}
+
+.checkout-secure {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.checkout-order-summary {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.checkout-order-summary .checkout-total {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #2d6a4f;
+}
+
+.checkout-divider {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.8rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.checkout-divider::before,
+.checkout-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: #e0e0e0;
+}
+.checkout-divider::before { left: 0; }
+.checkout-divider::after { right: 0; }
+
+.checkout-paypal-btn {
+  width: 100%;
+  background: #ffc439;
+  color: #003087;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+.checkout-paypal-btn:hover { background: #f0b429; }
+
+.checkout-field {
+  margin-bottom: 0.85rem;
+}
+
+.checkout-field label {
+  display: block;
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.checkout-field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.checkout-field input:focus {
+  outline: none;
+  border-color: #635bff;
+}
+
+.checkout-card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.checkout-pay-btn {
+  width: 100%;
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.checkout-pay-btn:hover { background: #1f4e3a; }
+
+.checkout-cancel {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  cursor: pointer;
+  text-decoration: underline;
 }
 

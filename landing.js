@@ -311,8 +311,6 @@ function showProductDetails(productName, storeName, storeAddress) {
     detail.name.toLowerCase() === productName.toLowerCase()
   );
   
-  // Create a detailed modal for inventory
-  const modal = document.getElementById('store-products-modal');
   const container = document.getElementById('store-products-container');
   
   // Helper function to capitalize first letter of each word
@@ -356,9 +354,14 @@ function showProductDetails(productName, storeName, storeAddress) {
           <div class="inventory-label">Available</div>
           <div class="inventory-value">${quantityAvailable} units (${isAvailable ? 'In Stock' : 'Low Stock'})</div>
         </div>
-        <div style="grid-column: 1 / -1; display: flex; gap: 1rem; align-items: center; margin-top: 0.5rem;">
-          <label for="${uniqueId}" style="font-size: 0.9rem; color: #666;">Qty:</label>
-          <input type="number" id="${uniqueId}" class="quantity-input" min="0" max="${quantityAvailable}" value="0" data-price="${displayPrice}" data-product-name="${productName.replace(/"/g, '&quot;')}" data-store-name="${storeName.replace(/"/g, '&quot;')}" data-store-address="${storeAddress.replace(/"/g, '&quot;')}" data-days-to-expiry="${daysToExpiry}">
+        <div style="grid-column: 1 / -1; display: flex; gap: 0.75rem; align-items: center; margin-top: 0.5rem;">
+          <label style="font-size: 0.9rem; color: #666;">Qty:</label>
+          <div class="qty-stepper">
+            <button class="qty-btn" type="button" onclick="adjustQty('${uniqueId}', -1)">−</button>
+            <input type="number" id="${uniqueId}" class="quantity-input" min="0" max="${quantityAvailable}" value="0" data-price="${displayPrice}" data-product-name="${productName.replace(/"/g, '&quot;')}" data-store-name="${storeName.replace(/"/g, '&quot;')}" data-store-address="${storeAddress.replace(/"/g, '&quot;')}" data-days-to-expiry="${daysToExpiry}">
+            <button class="qty-btn" type="button" onclick="adjustQty('${uniqueId}', 1, ${quantityAvailable})">+</button>
+          </div>
+          <span style="font-size:0.8rem;color:#888">${quantityAvailable} available</span>
         </div>
       </div>
     `;
@@ -380,11 +383,33 @@ function goBackToStoreProducts() {
   document.getElementById('store-products-modal').style.display = 'none';
 }
 
+function adjustQty(id, delta, max) {
+  const input = document.getElementById(id);
+  if (!input) return;
+  const newVal = Math.min(Math.max((parseInt(input.value) || 0) + delta, 0), max || 999);
+  input.value = newVal;
+}
+
+function completePurchase() {
+  localStorage.removeItem('cart');
+  if (typeof updateCartCount === 'function') updateCartCount();
+  document.getElementById('checkout-modal').style.display = 'none';
+  document.getElementById('cart-modal').style.display = 'none';
+  showToast('Order placed! Thank you.');
+}
+
+function showToast(msg) {
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#2d6a4f;color:white;padding:0.75rem 1.5rem;border-radius:8px;font-weight:500;z-index:9999;opacity:1;transition:opacity 0.4s ease';
+  document.body.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 400); }, 2200);
+}
+
 // Function to add product to cart
 function addProductToCart(productName, storeName) {
-  // This would integrate with your cart system
   console.log('Added to cart:', productName, 'from', storeName);
-  alert(`${productName} added to cart from ${storeName}`);
+  showToast(`${productName} added to cart`);
 }
 
 // Function to add selected product variants to cart
@@ -416,7 +441,7 @@ function addSelectedProductsToCart(productName, storeName, storeAddress) {
   });
   
   if (addedCount === 0) {
-    alert('Please select at least one item to add to cart');
+    showToast('Please select a quantity before adding to cart');
     return;
   }
   
@@ -434,8 +459,7 @@ function addSelectedProductsToCart(productName, storeName, storeAddress) {
   // Update cart count in UI
   updateCartCount();
   
-  // Show success message
-  alert(`Added ${addedCount} item(s) to cart`);
+  showToast(`Added ${addedCount} item(s) to cart`);
   
   // Close modal or reset form
   document.getElementById('store-products-modal').style.display = 'none';

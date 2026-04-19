@@ -189,48 +189,20 @@ function initMap() {
       };
 
       map.addSource('food-deserts', { type: 'geojson', data: foodDesertData });
-
-      map.addLayer({
-        id: 'food-deserts-fill',
-        type: 'fill',
-        source: 'food-deserts',
-        paint: { 'fill-color': '#d62728', 'fill-opacity': 0.18 }
-      });
-
-      map.addLayer({
-        id: 'food-deserts-outline',
-        type: 'line',
-        source: 'food-deserts',
-        paint: { 'line-color': '#d62728', 'line-width': 1.5, 'line-opacity': 0.5 }
-      });
+      map.addLayer({ id: 'food-deserts-fill', type: 'fill', source: 'food-deserts', paint: { 'fill-color': '#d62728', 'fill-opacity': 0.18 } });
+      map.addLayer({ id: 'food-deserts-outline', type: 'line', source: 'food-deserts', paint: { 'line-color': '#d62728', 'line-width': 1.5, 'line-opacity': 0.5 } });
 
       const tooltip = new mapboxgl.Popup({ closeButton: false, closeOnClick: false });
       map.on('mouseenter', 'food-deserts-fill', (e) => {
         map.getCanvas().style.cursor = 'pointer';
-        tooltip.setLngLat(e.lngLat)
-          .setHTML(`<strong>${e.features[0].properties.name}</strong><br>Food desert — low income &amp; low grocery access`)
-          .addTo(map);
+        tooltip.setLngLat(e.lngLat).setHTML(`<strong>${e.features[0].properties.name}</strong><br>Food desert — low income &amp; low grocery access`).addTo(map);
       });
-      map.on('mouseleave', 'food-deserts-fill', () => {
-        map.getCanvas().style.cursor = '';
-        tooltip.remove();
-      });
+      map.on('mouseleave', 'food-deserts-fill', () => { map.getCanvas().style.cursor = ''; tooltip.remove(); });
 
-      // Legend
       const legend = document.createElement('div');
       legend.id = 'food-desert-legend';
-      legend.style.cssText = `
-        position: absolute; bottom: 36px; right: 10px;
-        background: rgba(255,255,255,0.92); padding: 8px 12px;
-        border-radius: 6px; font-size: 12px; line-height: 1.6;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.2); pointer-events: none; z-index: 10;
-      `;
-      legend.innerHTML = `
-        <div style="display:flex;align-items:center;gap:8px">
-          <div style="width:14px;height:14px;background:#d62728;opacity:0.5;border-radius:2px;flex-shrink:0"></div>
-          <span>Food desert (low income + low access)</span>
-        </div>
-      `;
+      legend.style.cssText = 'position:absolute;bottom:36px;right:10px;background:rgba(255,255,255,0.92);padding:8px 12px;border-radius:6px;font-size:12px;line-height:1.6;box-shadow:0 1px 4px rgba(0,0,0,0.2);pointer-events:none;z-index:10;';
+      legend.innerHTML = '<div style="display:flex;align-items:center;gap:8px"><div style="width:14px;height:14px;background:#d62728;opacity:0.5;border-radius:2px;flex-shrink:0"></div><span>Food desert (low income + low access)</span></div>';
       document.getElementById('map').appendChild(legend);
     });
     

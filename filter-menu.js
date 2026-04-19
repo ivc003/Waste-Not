@@ -57,9 +57,9 @@ function renderResults(term) {
   if (!term) { container.innerHTML = ''; return; }
 
   const matches = inventoryData
-    .filter(r => r.store_products.toLowerCase().includes(term.toLowerCase()))
+    .filter(r => r.store_products.toLowerCase().startsWith(term.toLowerCase()))
     .sort((a, b) => scoreItem(b) - scoreItem(a))
-    .slice(0, 10);
+    .slice(0, 50);
 
   if (!matches.length) {
     container.innerHTML = '<p class="no-products">No matches found.</p>';
@@ -487,6 +487,23 @@ if (closeCartModal) {
   });
 }
 
+const purchaseBtn = document.getElementById('purchase-btn');
+if (purchaseBtn) {
+  purchaseBtn.addEventListener('click', () => {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    if (cart.length === 0) return;
+    const total = cart.reduce((s, i) => s + (i.totalPrice || 0), 0);
+    const summary = document.getElementById('checkout-summary');
+    if (summary) {
+      summary.innerHTML = cart.map(i =>
+        `<div style="display:flex;justify-content:space-between;margin-bottom:0.3rem"><span>${i.productName} × ${i.quantity}</span><span>$${(i.totalPrice||0).toFixed(2)}</span></div>`
+      ).join('') + `<div class="checkout-total" style="display:flex;justify-content:space-between;border-top:1px solid #ddd;padding-top:0.5rem;margin-top:0.5rem"><span>Total</span><span>$${total.toFixed(2)}</span></div>`;
+    }
+    cartModal.style.display = 'none';
+    document.getElementById('checkout-modal').style.display = 'flex';
+  });
+}
+
 // Close cart modal when clicking outside
 if (cartModal) {
   cartModal.addEventListener('click', (e) => {
@@ -498,30 +515,41 @@ if (cartModal) {
 
 function displayCartModal() {
   const cartItemsList = document.getElementById('cart-items-list');
-  const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
-  
-  if (shoppingList.length === 0) {
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+  if (cart.length === 0) {
     cartItemsList.innerHTML = '<p class="empty-cart-message">There are no items in cart</p>';
     return;
   }
-  
+
+  const total = cart.reduce((sum, item) => sum + (item.totalPrice || 0), 0);
+
   cartItemsList.innerHTML = '';
-  shoppingList.forEach(item => {
+  cart.forEach((item, index) => {
     const cartItem = document.createElement('div');
     cartItem.className = 'cart-item';
     cartItem.innerHTML = `
-      <span class="cart-item-name">${item}</span>
-      <button class="cart-item-remove" data-ingredient="${item}">Remove</button>
+      <div class="cart-item-name">
+        <strong>${item.productName}</strong>
+        <small style="display:block;color:#888">${item.storeName} · qty ${item.quantity} · $${(item.totalPrice || 0).toFixed(2)}</small>
+      </div>
+      <button class="cart-item-remove" data-index="${index}">Remove</button>
     `;
     cartItemsList.appendChild(cartItem);
-    
-    // Add event listener to remove button
-    const removeBtn = cartItem.querySelector('.cart-item-remove');
-    removeBtn.addEventListener('click', () => {
-      removeFromShoppingList(item);
-      displayCartModal(); // Refresh the cart display
+
+    cartItem.querySelector('.cart-item-remove').addEventListener('click', () => {
+      const updated = JSON.parse(localStorage.getItem('cart') || '[]');
+      updated.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(updated));
+      updateCartCount();
+      displayCartModal();
     });
   });
+
+  const totalRow = document.createElement('div');
+  totalRow.style.cssText = 'text-align:right;padding:0.75rem 0;font-weight:600;border-top:2px solid #eee;margin-top:0.5rem';
+  totalRow.textContent = `Total: $${total.toFixed(2)}`;
+  cartItemsList.appendChild(totalRow);
 }
 
 // Function to refresh stores display with shopping list filter

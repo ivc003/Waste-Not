@@ -51,6 +51,41 @@
       <div id="cart-items-list" class="cart-items-list">
         <p class="empty-cart-message">There are no items in cart</p>
       </div>
+      <button id="purchase-btn" style="width:100%;padding:0.9rem;background:#2d6a4f;color:white;border:none;border-radius:6px;font-size:1rem;font-weight:600;cursor:pointer;">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkout-modal">
+    <div class="checkout-box">
+      <h2>Checkout</h2>
+      <p class="checkout-secure">🔒 Secure payment</p>
+
+      <div class="checkout-order-summary" id="checkout-summary">
+        <div>Loading order...</div>
+      </div>
+
+      <button class="checkout-paypal-btn" onclick="showToast('Redirecting to Zelle...')">
+        Pay with <span style="color:#6d1ed4;font-weight:800">Zelle</span>
+      </button>
+
+      <div class="checkout-divider">or pay by bank transfer (ACH)</div>
+
+      <div class="checkout-field">
+        <label>Business Name</label>
+        <input type="text" placeholder="Restaurant / Business Name">
+      </div>
+      <div class="checkout-field">
+        <label>Routing Number</label>
+        <input type="text" placeholder="021000021" maxlength="9">
+      </div>
+      <div class="checkout-field">
+        <label>Account Number</label>
+        <input type="text" placeholder="••••••••••••" maxlength="17">
+      </div>
+
+      <button class="checkout-pay-btn" onclick="completePurchase()">Confirm & Pay</button>
+      <button class="checkout-cancel" onclick="document.getElementById('checkout-modal').style.display='none'">Cancel</button>
     </div>
   </div>
 
