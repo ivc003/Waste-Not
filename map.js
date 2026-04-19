@@ -1,9 +1,9 @@
-// Import Mapbox as an ESM module
-import mapboxgl from 'https://cdn.jsdelivr.net/npm/mapbox-gl@2.15.0/+esm';
+// Mapbox configuration and initialization
+console.log('Map.js script loaded');
 
 // Check that Mapbox GL JS is loaded
-console.log('Mapbox GL JS Loaded:', mapboxgl);
-console.log('Mapbox version:', mapboxgl.version);
+console.log('Mapbox GL JS Loaded:', typeof mapboxgl !== 'undefined' ? 'Yes' : 'No');
+console.log('Turf loaded:', typeof turf !== 'undefined' ? 'Yes' : 'No');
 
 // Set your Mapbox access token here
 mapboxgl.accessToken = 'pk.eyJ1IjoidmFsYXUiLCJhIjoiY21vNTlvenR0MWVlejJwcHNyaDQyMWk1dyJ9._Z2m36NY-HnfdP_mGii0Sg';
@@ -87,151 +87,151 @@ function initMap() {
     // Create markers for each restaurant (but don't add to map yet)
     const markers = {};
 
-  Object.entries(restaurants).forEach(([restaurantId, coords]) => {
-    // Create a custom marker element
-    const markerElement = document.createElement('div');
-    markerElement.className = 'restaurant-marker';
-    markerElement.style.width = '40px';
-    markerElement.style.height = '40px';
-    markerElement.style.backgroundImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232b7821" stroke="white" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" fill="white"/></svg>')`;
-    markerElement.style.backgroundSize = 'contain';
-    markerElement.style.backgroundRepeat = 'no-repeat';
-    markerElement.style.backgroundPosition = 'center';
-    
-    // Create a popup for the marker
-    const popup = new mapboxgl.Popup({ offset: 25 }).setText(
-      restaurantId.replace('-', ' ').toUpperCase()
-    );
-    
-    // Create the marker (but don't add to map yet)
-    const marker = new mapboxgl.Marker(markerElement)
-      .setLngLat(coords)
-      .setPopup(popup);
-    
-    markers[restaurantId] = marker;
-  });
-
-  // Keep track of currently selected restaurant
-  let currentSelectedRestaurant = null;
-
-  // Function to update the radius circle
-  function updateRadiusCircle(restaurantCoords, radiusMiles) {
-    // Remove existing circle source and layer if they exist
-    if (map.getSource('radius-circle')) {
-      map.removeLayer('radius-circle-fill');
-      map.removeLayer('radius-circle-stroke');
-      map.removeSource('radius-circle');
-    }
-    
-    // Create a proper circle using turf.js
-    const circleFeature = createCircleGeoJSON(restaurantCoords, radiusMiles);
-    
-    // Add the circle source
-    map.addSource('radius-circle', {
-      type: 'geojson',
-      data: circleFeature
-    });
-    
-    // Add circle fill layer
-    map.addLayer({
-      id: 'radius-circle-fill',
-      type: 'fill',
-      source: 'radius-circle',
-      paint: {
-        'fill-color': '#ff0000',
-        'fill-opacity': 0.2
-      }
-    });
-    
-    // Add circle stroke layer
-    map.addLayer({
-      id: 'radius-circle-stroke',
-      type: 'line',
-      source: 'radius-circle',
-      paint: {
-        'line-color': '#ff0000',
-        'line-width': 2,
-        'line-opacity': 0.8
-      }
-    });
-  }
-
-  // Handle location dropdown changes
-  const locationDropdown = document.getElementById('floatingLocationSelect');
-  const radiusSlider = document.getElementById('floatingRadiusSlider');
-
-  if (locationDropdown) {
-    locationDropdown.addEventListener('change', (e) => {
-      const selectedLocation = e.target.value;
+    Object.entries(restaurants).forEach(([restaurantId, coords]) => {
+      // Create a custom marker element
+      const markerElement = document.createElement('div');
+      markerElement.className = 'restaurant-marker';
+      markerElement.style.width = '40px';
+      markerElement.style.height = '40px';
+      markerElement.style.backgroundImage = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%232b7821" stroke="white" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" /><circle cx="12" cy="9" r="2.5" fill="white"/></svg>')`;
+      markerElement.style.backgroundSize = 'contain';
+      markerElement.style.backgroundRepeat = 'no-repeat';
+      markerElement.style.backgroundPosition = 'center';
       
-      // Remove previous marker if one was selected
-      if (currentSelectedRestaurant && markers[currentSelectedRestaurant]) {
-        markers[currentSelectedRestaurant].remove();
+      // Create a popup for the marker
+      const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+        restaurantId.replace('-', ' ').toUpperCase()
+      );
+      
+      // Create the marker (but don't add to map yet)
+      const marker = new mapboxgl.Marker(markerElement)
+        .setLngLat(coords)
+        .setPopup(popup);
+      
+      markers[restaurantId] = marker;
+    });
+
+    // Keep track of currently selected restaurant
+    let currentSelectedRestaurant = null;
+
+    // Function to update the radius circle
+    function updateRadiusCircle(restaurantCoords, radiusMiles) {
+      // Remove existing circle source and layer if they exist
+      if (map.getSource('radius-circle')) {
+        map.removeLayer('radius-circle-fill');
+        map.removeLayer('radius-circle-stroke');
+        map.removeSource('radius-circle');
       }
       
-      if (selectedLocation && restaurants[selectedLocation]) {
-        const coords = restaurants[selectedLocation];
-        
-        // Add the marker for the selected restaurant
-        markers[selectedLocation].addTo(map);
-        currentSelectedRestaurant = selectedLocation;
-        
-        // Draw the radius circle with current slider value
-        const radiusValue = parseInt(radiusSlider.value);
-        updateRadiusCircle(coords, radiusValue);
-        
-        // Calculate offset for side menu and floating bar
-        // Side menu is 250px wide, floating bar is ~80px tall
-        const sideMenuWidth = 250;
-        const floatingBarHeight = 80;
-        
-        // Get map container dimensions
-        const mapContainer = document.getElementById('map');
-        const mapWidth = mapContainer.clientWidth;
-        const mapHeight = mapContainer.clientHeight;
-        
-        // Calculate the offset in pixels (center adjusted to account for side menu)
-        const offsetX = (mapWidth - sideMenuWidth) / 2 + sideMenuWidth / 2;
-        const offsetY = (mapHeight - floatingBarHeight) / 2 + floatingBarHeight / 2;
-        
-        // Convert pixel offset to map coordinates using unproject
-        const point = new mapboxgl.Point(offsetX, offsetY);
-        const offsetCoords = map.unproject(point);
-        
-        // Animate to the selected location with smooth transition
-        map.flyTo({
-          center: coords,
-          zoom: 14,
-          duration: 2000, // 2 second animation
-          offset: [sideMenuWidth / 2, floatingBarHeight / 2]
-        });
-      } else {
-        currentSelectedRestaurant = null;
-        // Remove circle if no restaurant is selected
-        if (map.getSource('radius-circle')) {
-          map.removeLayer('radius-circle-fill');
-          map.removeLayer('radius-circle-stroke');
-          map.removeSource('radius-circle');
+      // Create a proper circle using turf.js
+      const circleFeature = createCircleGeoJSON(restaurantCoords, radiusMiles);
+      
+      // Add the circle source
+      map.addSource('radius-circle', {
+        type: 'geojson',
+        data: circleFeature
+      });
+      
+      // Add circle fill layer
+      map.addLayer({
+        id: 'radius-circle-fill',
+        type: 'fill',
+        source: 'radius-circle',
+        paint: {
+          'fill-color': '#ff0000',
+          'fill-opacity': 0.2
         }
-      }
-    });
-  }
+      });
+      
+      // Add circle stroke layer
+      map.addLayer({
+        id: 'radius-circle-stroke',
+        type: 'line',
+        source: 'radius-circle',
+        paint: {
+          'line-color': '#ff0000',
+          'line-width': 2,
+          'line-opacity': 0.8
+        }
+      });
+    }
 
-  // Handle radius slider changes
-  if (radiusSlider) {
-    radiusSlider.addEventListener('input', (e) => {
-      const radiusValue = parseInt(e.target.value);
-      
-      // Update the radius display value
-      document.getElementById('floatingRadiusValue').textContent = radiusValue;
-      
-      // If a restaurant is selected, update the circle
-      if (currentSelectedRestaurant && restaurants[currentSelectedRestaurant]) {
-        const coords = restaurants[currentSelectedRestaurant];
-        updateRadiusCircle(coords, radiusValue);
-      }
-    });
-  }
+    // Handle location dropdown changes
+    const locationDropdown = document.getElementById('floatingLocationSelect');
+    const radiusSlider = document.getElementById('floatingRadiusSlider');
+
+    if (locationDropdown) {
+      locationDropdown.addEventListener('change', (e) => {
+        const selectedLocation = e.target.value;
+        
+        // Remove previous marker if one was selected
+        if (currentSelectedRestaurant && markers[currentSelectedRestaurant]) {
+          markers[currentSelectedRestaurant].remove();
+        }
+        
+        if (selectedLocation && restaurants[selectedLocation]) {
+          const coords = restaurants[selectedLocation];
+          
+          // Add the marker for the selected restaurant
+          markers[selectedLocation].addTo(map);
+          currentSelectedRestaurant = selectedLocation;
+          
+          // Draw the radius circle with current slider value
+          const radiusValue = parseInt(radiusSlider.value);
+          updateRadiusCircle(coords, radiusValue);
+          
+          // Calculate offset for side menu and floating bar
+          // Side menu is 250px wide, floating bar is ~80px tall
+          const sideMenuWidth = 250;
+          const floatingBarHeight = 80;
+          
+          // Get map container dimensions
+          const mapContainer = document.getElementById('map');
+          const mapWidth = mapContainer.clientWidth;
+          const mapHeight = mapContainer.clientHeight;
+          
+          // Calculate the offset in pixels (center adjusted to account for side menu)
+          const offsetX = (mapWidth - sideMenuWidth) / 2 + sideMenuWidth / 2;
+          const offsetY = (mapHeight - floatingBarHeight) / 2 + floatingBarHeight / 2;
+          
+          // Convert pixel offset to map coordinates using unproject
+          const point = new mapboxgl.Point(offsetX, offsetY);
+          const offsetCoords = map.unproject(point);
+          
+          // Animate to the selected location with smooth transition
+          map.flyTo({
+            center: coords,
+            zoom: 14,
+            duration: 2000, // 2 second animation
+            offset: [sideMenuWidth / 2, floatingBarHeight / 2]
+          });
+        } else {
+          currentSelectedRestaurant = null;
+          // Remove circle if no restaurant is selected
+          if (map.getSource('radius-circle')) {
+            map.removeLayer('radius-circle-fill');
+            map.removeLayer('radius-circle-stroke');
+            map.removeSource('radius-circle');
+          }
+        }
+      });
+    }
+
+    // Handle radius slider changes
+    if (radiusSlider) {
+      radiusSlider.addEventListener('input', (e) => {
+        const radiusValue = parseInt(e.target.value);
+        
+        // Update the radius display value
+        document.getElementById('floatingRadiusValue').textContent = radiusValue;
+        
+        // If a restaurant is selected, update the circle
+        if (currentSelectedRestaurant && restaurants[currentSelectedRestaurant]) {
+          const coords = restaurants[currentSelectedRestaurant];
+          updateRadiusCircle(coords, radiusValue);
+        }
+      });
+    }
   } catch (error) {
     console.error('❌ Error initializing map:', error);
     console.error('Error details:', error.message);
@@ -240,10 +240,13 @@ function initMap() {
 }
 
 // Initialize map when DOM is ready
+console.log('Document ready state:', document.readyState);
+
 if (document.readyState === 'loading') {
+  console.log('DOM still loading, adding DOMContentLoaded listener');
   document.addEventListener('DOMContentLoaded', initMap);
 } else {
+  console.log('DOM already loaded, initializing map now');
   initMap();
 }
-
 
