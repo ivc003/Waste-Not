@@ -225,23 +225,67 @@ body {
 
 /* ===== WHY THIS MATTERS PAGE ===== */
 .narrative-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
+  width:100%;
+  padding: 0;
   background: white;
   min-height: calc(100vh - 80px);
   color: #333;
+  display: flex;
+  justify-content: center;
 }
 
 .narration-box-static {
   background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .story-step {
   animation: fadeIn 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.story-map-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.story-map-container {
+  max-width: 75%;
+  max-height: 50%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0 2rem 0;
+  margin-top: calc(22rem);
+  margin-left: calc(11rem);
+}
+
+.story-content {
+  padding: 2rem;
+  background: white;
+}
+
+.story-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
 }
 
 @keyframes fadeIn {
