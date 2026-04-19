@@ -5,7 +5,7 @@ import mapboxgl from 'https://cdn.jsdelivr.net/npm/mapbox-gl@2.15.0/+esm';
 console.log('Mapbox GL JS Loaded:', mapboxgl);
 
 // Set your Mapbox access token here
-mapboxgl.accessToken = 'pk.eyJ1IjoidmFsYXUiLCJhIjoiY202MWtrZjhlMGw0eTJqcHl4aHBqc2M3eCJ9.vqMTDeNjunLGYJWNZUTJuw';
+mapboxgl.accessToken = 'pk.eyJ1IjoidmFsYXUiLCJhIjoiY21vNTlvenR0MWVlejJwcHNyaDQyMWk1dyJ9._Z2m36NY-HnfdP_mGii0Sg';
 
 // Fixed restaurant coordinates at real grocery store areas in Washington DC
 const restaurants = {
