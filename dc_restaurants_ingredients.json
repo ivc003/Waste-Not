@@ -1,0 +1,525 @@
+{
+  "restaurant-x": {
+    "name": "Moon Rabbit By Kevin Tien",
+    "cuisine": "Vietnamese",
+    "website": "https://www.moonrabbitdc.com",
+    "menu_links": [
+      "https://www.moonrabbitdc.com/food",
+      "https://www.moonrabbitdc.com/drinks",
+      "https://www.moonrabbitdc.com/menu",
+      "https://www.moonrabbitdc.com/food#dessert",
+      "https://www.moonrabbitdc.com/drinks#wine"
+    ],
+    "ingredients": [
+      "fish sauce",
+      "ginger",
+      "lemongrass",
+      "rice noodles"
+    ],
+    "sample_menu_items": [
+      "Dessert",
+      "Dinner",
+      "Wine, Beer, & More",
+      "Cocktails"
+    ]
+  },
+  "restaurant-y": {
+    "name": "Queen's English",
+    "cuisine": "Caribbean",
+    "website": "https://www.queensenglishdc.com",
+    "menu_links": [
+      "https://www.queensenglishdc.com/menus"
+    ],
+    "ingredients": [
+      "beans",
+      "chicken",
+      "plantain",
+      "rice"
+    ],
+    "sample_menu_items": [
+      "tuesday-thursday 5:30p-9:00p (last seating)",
+      "no willpower hour",
+      "$45 bottles of wine daily open till 7p",
+      "join our wine club",
+      "private events",
+      "menus | Explore Our Menus — Queen's English",
+      "1345 park rd nw",
+      "Open Menu",
+      "DO NOT CALL",
+      "closed sunday + monday",
+      "friday + saturday 5p-9:30p (last seating)",
+      "our location",
+      "washington, dc 20010",
+      "3410 11th st nw",
+      "Skip to Content",
+      "Close Menu",
+      "for private events contact:",
+      "wine club",
+      "(some holiday exclusions apply)",
+      "TEXT for immediate reply"
+    ]
+  },
+  "restaurant-z": {
+    "name": "YELLOW",
+    "cuisine": "Unknown",
+    "website": "https://www.yellowthecafe.com",
+    "menu_links": [],
+    "ingredients": [],
+    "sample_menu_items": []
+  },
+  "restaurant-4": {
+    "name": "Lutèce – A Michelin Guide French Neobistro in Washington, DC",
+    "cuisine": "Indian",
+    "website": "https://www.lutecedc.com",
+    "menu_links": [
+      "https://www.lutecedc.com/menu",
+      "https://resy.com/cities/washington-dc/venues/lutece?date=2024-07-25&seats=2"
+    ],
+    "ingredients": [
+      "beef",
+      "butter",
+      "coriander",
+      "cumin",
+      "ginger",
+      "mushroom",
+      "pepper",
+      "pork",
+      "turmeric"
+    ],
+    "sample_menu_items": [
+      "$125",
+      "cultured butter & smoked olive oil",
+      "smoked butter sabayon, preserved aji dulces, marigold vin",
+      "doors open 11am",
+      "blood orange, ludacrisp, marigold",
+      "Steak Tartare",
+      "Tues / Wed",
+      "Sommelier Wine Pairing",
+      "$10",
+      "top of page",
+      "Grilled Rockfish",
+      "Fried Sweetbreads",
+      "Join our mailing list",
+      "*to be enjoyed by the whole table only",
+      "The Popal Group",
+      "**please refer to our allergy restriction policy",
+      "tahini, parmesan, roasted sesame",
+      "$28",
+      "Pain Au Lait",
+      "© 2026 by"
+    ]
+  },
+  "restaurant-5": {
+    "name": "L'Ardente - Glam Italian Restaurant",
+    "cuisine": "Vietnamese",
+    "website": "https://www.lardente.com",
+    "menu_links": [
+      "https://qr.imenupro.com/1ao8-rw",
+      "https://www.lardente.com#menu",
+      "https://resy.com/cities/dc/lardente?date=2022-03-14&seats=2",
+      "https://gardenhospitality.tripleseat.com/party_request/20063",
+      "https://portal.tripleseat.com/direct_bookings/p7aez1r9q35b",
+      "https://dc.eater.com/2023/1/25/23570980/2023-james-beard-awards-restaurant-and-chef-semifinalists-for-dc",
+      "https://www.washingtonpost.com/dc-md-va/2023/12/18/best-italian-restaurants-dc/"
+    ],
+    "ingredients": [
+      "cheese",
+      "fish sauce",
+      "flour",
+      "ginger",
+      "lemongrass",
+      "mushroom",
+      "rice noodles",
+      "tomato"
+    ],
+    "sample_menu_items": [
+      "Additional tips are not expected but always appreciated.",
+      "| Cora | Pinot Grigio | Abruzzo 2024",
+      "Tito's Vodka | Amari | Espresso (Available Alcohol-Free)",
+      "PIZZAS - 12",
+      "Espresso Torino",
+      "Naked, Famous & Frozen",
+      "HAPPY HOUR",
+      "Vino Frizzante",
+      "Negroni Classico",
+      "4 â 6pm Weekdays at the Bar Only",
+      "| Menabrea \"Bionda\" | Italy | 4.8% ABV",
+      "Published on: Mar-11-2026 8:46 AM",
+      "Morel Mornay | Wild Mushrooms | Parmigiano",
+      "Glam Spritz",
+      "La Birra",
+      "Vino Rosso",
+      "| La Gioiosa | Glera | Prosecco NV",
+      "DRINKS - 8",
+      "Vino Bianco",
+      "Discover a lighter side of L'Ardente from Monday – Friday, 11:30am – 2:30pm."
+    ]
+  },
+  "restaurant-6": {
+    "name": "St. Anselm - Washington DC's American Tavern",
+    "cuisine": "American",
+    "website": "https://stanselmdc.com",
+    "menu_links": [
+      "https://stanselmdc.com/#menu-section"
+    ],
+    "ingredients": [
+      "beef",
+      "lettuce",
+      "onion",
+      "potato"
+    ],
+    "sample_menu_items": [
+      "-Fish-",
+      "Smalls from the Grill",
+      "-Beef-",
+      "Brunch Cocktails",
+      "VISIT US ON",
+      "Eggs & Such",
+      "Email Signup",
+      "-Lamb-",
+      "Sandwiches",
+      "-Poultry-",
+      "Bigs from the Grill",
+      "-Vegetable-",
+      "From the Grill",
+      "Lunch Cocktails",
+      "Little Things",
+      "STARR RESTAURANTS",
+      "Salads",
+      "Starters",
+      "Dessert",
+      "Sides"
+    ]
+  },
+  "restaurant-7": {
+    "name": "Thip Khao",
+    "cuisine": "Lao",
+    "website": "https://www.thipkhao.com",
+    "menu_links": [
+      "https://www.instagram.com/laofoodmovement/"
+    ],
+    "ingredients": [
+      "cilantro",
+      "fish sauce",
+      "lemongrass",
+      "sticky rice"
+    ],
+    "sample_menu_items": []
+  },
+  "restaurant-8": {
+    "name": "PADAEKDC.COM",
+    "cuisine": "Lao",
+    "website": "https://www.padaekdc.com",
+    "menu_links": [],
+    "ingredients": [
+      "cilantro",
+      "fish sauce",
+      "lemongrass",
+      "sticky rice"
+    ],
+    "sample_menu_items": []
+  },
+  "restaurant-9": {
+    "name": "Osteria Mozza Washington DC - Italian Cuisine & Wine",
+    "cuisine": "Italian",
+    "website": "https://osteriamozzadc.com",
+    "menu_links": [
+      "https://osteriamozzadc.com/#menu-section"
+    ],
+    "ingredients": [
+      "basil",
+      "garlic",
+      "mozzarella",
+      "pasta",
+      "tomato"
+    ],
+    "sample_menu_items": [
+      "eggs",
+      "Panini",
+      "spuntini",
+      "Dolci",
+      "Apertivi",
+      "Primi",
+      "Apertivi Della Mattina",
+      "Bevande Analcoliche",
+      "Mozzarella",
+      "Pizze",
+      "Forno",
+      "VISIT US ON",
+      "Secondi",
+      "Cocktails",
+      "Email Signup",
+      "Beers",
+      "Vini Rossi",
+      "Brunch",
+      "DOLCI",
+      "From The Mozzarella Bar"
+    ]
+  },
+  "restaurant-10": {
+    "name": "Namak Restaurant D.C. - a fresh perspective on med-chique casual dining",
+    "cuisine": "Indian",
+    "website": "https://www.namakdc.com",
+    "menu_links": [
+      "https://www.namakdc.com/#menu",
+      "https://resy.com/cities/washington-dc/venues/namak?date=2024-04-04&seats=2",
+      "https://www.washingtonian.com/guides/food/the-hot-list-10-restaurants-around-dc-were-loving-right-now/#ama",
+      "https://dc.eater.com/maps/best-new-restaurants-heatmap-dc",
+      "https://dc.eater.com/2024/3/12/24098637/most-anticipated-spring-restaurant-openings-around-dc-2024?ueid=3fa57359d477d784d565b810c4fef941",
+      "https://www.namakdc.com#menu"
+    ],
+    "ingredients": [
+      "coriander",
+      "cumin",
+      "fish",
+      "ginger",
+      "rice",
+      "turmeric"
+    ],
+    "sample_menu_items": [
+      "41 Things to Do in the DC Area This Week and Weekend",
+      "Adams MorganÃ¢â¬â¢s former Mintwood Place reopens as Namak",
+      "theinfatuation: Top saved spot this month",
+      "10 Comforting Fall Dishes From DC-Area Restaurants",
+      "The Hit List: New DC Restaurants To Try Right Now",
+      "Eastern Mediterranean Restaurant Namak Replaces Mintwood Place in Adams Morgan",
+      "Hot New Dining Spots to Check Out for DCÃ¢â¬â¢s Summer Restaurant Week",
+      "The Most Anticipated Spring Restaurant Openings to Track Around D.C.",
+      "Are You Restaurant Week Ready? We Are! (A Primer!)",
+      "The Hot List: 10 Restaurants Around DC WeÃ¢â¬â¢re Loving Right Now",
+      "The Hottest New Restaurants Around D.C., April 2024",
+      "6 DC-Area Restaurant Weeks to Look Forward to This Summer",
+      "Where To Eat & Drink In Adams Morgan",
+      "The 26 best things to do in D.C. this weekend and next week",
+      "29 Best New Restaurants in the DC Area",
+      "Lush new Mediterranean restaurant replaces Mintwood in Adams Morgan",
+      "Good Taste: Namak Brightens Adams Morgan With Persian, Greek, and Turkish Delights",
+      "{{'titles.skip_to_main' | translate}}",
+      "Main Content",
+      "Resy | Right This Way"
+    ]
+  },
+  "restaurant-11": {
+    "name": "Anju",
+    "cuisine": "Korean",
+    "website": "https://www.anjurestaurant.com",
+    "menu_links": [
+      "https://www.anjurestaurant.com/menus",
+      "https://www.anjurestaurant.com/dine-in",
+      "https://www.anjurestaurant.com/drink-menu",
+      "https://www.anjurestaurant.com/brunch",
+      "https://www.anjurestaurant.com/happy-hour-1"
+    ],
+    "ingredients": [
+      "beef",
+      "bun",
+      "butter",
+      "chicken",
+      "lemon",
+      "lettuce",
+      "onion",
+      "potato",
+      "rice",
+      "salmon",
+      "sesame",
+      "shrimp",
+      "soy sauce",
+      "tomato"
+    ],
+    "sample_menu_items": [
+      "Yeolmu Kimchi | 6",
+      "add tofu or bulgogi | 7",
+      "Dolsot Bibim Bap",
+      "Eomuk | 6",
+      "Palace Ddukbokgi",
+      "Guksu | 21",
+      "Dinner Menu — Anju",
+      "battered branzino, braised mu, yangnyeom sauce, herb muchim",
+      "Dinner Menu",
+      "sorbet - seasonal",
+      "30-Day Kimchi",
+      "MAMA LEE’S CLASSICS",
+      "pork & kimchi dumplings, pan-fried",
+      "Yache Mandu | 17",
+      "Pat Pound Cake | 15",
+      "Mandu | 16",
+      "Kimchi Jjigae",
+      "Tasting Menu",
+      "Black Sesame Bungeoppang | 16",
+      "braised pork shoulder stew, tofu, aged kimchi"
+    ]
+  },
+  "restaurant-12": {
+    "name": "Centrolina",
+    "cuisine": "Unknown",
+    "website": "https://www.centrolinadc.com",
+    "menu_links": [
+      "https://www.centrolinadc.com/menu"
+    ],
+    "ingredients": [],
+    "sample_menu_items": [
+      "Centrolina"
+    ]
+  },
+  "restaurant-13": {
+    "name": "Pastis DC - French Cuisine in Washington DC",
+    "cuisine": "Italian",
+    "website": "https://pastisdc.com",
+    "menu_links": [
+      "https://pastisdc.com/#menu-section",
+      "https://pastisdc.com/wp-content/uploads/2026/04/pastis-dc_PASTISDC-beverage-032626.pdf",
+      "https://pastisdc.com/wp-content/uploads/2026/04/pastis-dc_PASTISDC-wine-ADA.pdf"
+    ],
+    "ingredients": [
+      "basil",
+      "beef",
+      "bun",
+      "butter",
+      "garlic",
+      "lettuce",
+      "onion",
+      "pasta",
+      "pepper",
+      "tomato"
+    ],
+    "sample_menu_items": [
+      "Pastas",
+      "Viennoiserie",
+      "Garniture",
+      "Fruits De Mer",
+      "VISIT US ON",
+      "Email Signup",
+      "Grignotines",
+      "Entrées",
+      "Salades et Sandwiches",
+      "Brunch",
+      "Desserts",
+      "Steak Frites",
+      "Gougères",
+      "Pastis Fromages",
+      "Hors D'oeuvres",
+      "STARR RESTAURANTS",
+      "Garnitures",
+      "Les Fromages",
+      "Dessert",
+      "Plat Du Jour"
+    ]
+  },
+  "restaurant-14": {
+    "name": "Le Diplomate | French Brasserie in Washington, D.C.",
+    "cuisine": "French",
+    "website": "https://lediplomatedc.com",
+    "menu_links": [
+      "https://lediplomatedc.com/#menu-section"
+    ],
+    "ingredients": [
+      "butter",
+      "cream",
+      "shallot",
+      "thyme"
+    ],
+    "sample_menu_items": [
+      "Hors d'Oeuvres",
+      "Viennoiserie",
+      "BiÈres | en bouteille",
+      "LES VINS | Blanc",
+      "Le Diplomate Fromages",
+      "Fruits De Mer",
+      "Les Oeufs",
+      "VISIT US ON",
+      "Cocktails",
+      "Email Signup",
+      "Effervescents",
+      "Entrées",
+      "Les Salades Et Sandwich",
+      "Desserts",
+      "La Truffe",
+      "Plat du Jour",
+      "Boissons",
+      "Les Salades",
+      "STARR RESTAURANTS",
+      "BiÈres | Pression"
+    ]
+  },
+  "restaurant-15": {
+    "name": "a.kitchen+bar D.C.",
+    "cuisine": "BBQ",
+    "website": "https://akitchenandbardc.com",
+    "menu_links": [
+      "https://akitchenandbardc.com/menu/",
+      "https://akitchenandbardc.com/easter/",
+      "https://akitchenandbardc.com/brunch/",
+      "https://akitchenandbardc.com/lunch/",
+      "https://akitchenandbardc.com/dinner/",
+      "https://akitchenandbardc.com/drinks/"
+    ],
+    "ingredients": [
+      "anchovy",
+      "basil",
+      "beef",
+      "bun",
+      "butter",
+      "carrot",
+      "chicken",
+      "croutons",
+      "flour",
+      "garlic",
+      "lettuce",
+      "mushroom",
+      "oil",
+      "onion",
+      "parmesan",
+      "pasta",
+      "pepper",
+      "pork",
+      "potato",
+      "romaine",
+      "salt",
+      "tomato"
+    ],
+    "sample_menu_items": [
+      "Easter Brunch",
+      "Gift Cards",
+      "Private Events",
+      "1010 NEW HAMPSHIRE AVENUE, NW",
+      "HIGH STREET HOSPITALITY GROUP",
+      "Happy Hour",
+      "Menu - akitchenandbardc.com",
+      "WASHINGTON, DC",
+      "happy hour",
+      "RICOTTA TOAST",
+      "Chanterelle honey jam",
+      "PANNA COTTA",
+      "BISCUITS & GRAVY",
+      "ORCHARD POINT OYSTERS (VA)",
+      "Brown butter, saba",
+      "Citrus glaze, lemon curd, maple butter",
+      "Duck confit gravy, smothered eggs, sea salt biscuit",
+      "DESSERT | CHOOSE ONE",
+      "Green garlic butter +10",
+      "FOR THE TABLE"
+    ]
+  },
+  "restaurant-16": {
+    "name": "2fifty | Texas Style BBQ with a pinch of the tropics | MD & DC",
+    "cuisine": "BBQ",
+    "website": "https://www.2fiftybbq.com",
+    "menu_links": [
+      "https://2fiftybbq.com/riverdale-park",
+      "https://2fiftybbq.com/washington-dc",
+      "https://www.2fiftybbq.com/news/2026-rammy-awards-vote-for-favorite-dmv-bar-brunch-and-more"
+    ],
+    "ingredients": [
+      "beef",
+      "garlic",
+      "onion",
+      "pork"
+    ],
+    "sample_menu_items": [
+      "2026 RAMMY Awards: Vote for favorite DMV bar, brunch and more",
+      "Dc's Biggest Night Out: The 2026 Rammys Finalists Are Here",
+      "DC’s 2026 RAMMYS Finalists Revealed: How to Cast Your Vote",
+      "RAMMYS FINALISTS ARE OUT, AND YES, THE ROOM WAS BUZZING"
+    ]
+  }
+}

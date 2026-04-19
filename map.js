@@ -159,6 +159,79 @@ function initMap() {
       console.log('✅ Map loaded successfully!');
       console.log('Map center:', map.getCenter());
       console.log('Map zoom:', map.getZoom());
+
+      // Food desert overlay — USDA low income + low access census tracts (DC)
+      const foodDesertData = {
+        type: 'FeatureCollection',
+        features: [
+          {
+            type: 'Feature',
+            properties: { name: 'Ward 8 — Anacostia / Congress Heights' },
+            geometry: { type: 'Polygon', coordinates: [[
+              [-77.020, 38.826], [-76.944, 38.826], [-76.944, 38.872], [-77.020, 38.872], [-77.020, 38.826]
+            ]]}
+          },
+          {
+            type: 'Feature',
+            properties: { name: 'Ward 7 — Deanwood / Benning Heights' },
+            geometry: { type: 'Polygon', coordinates: [[
+              [-76.950, 38.870], [-76.884, 38.870], [-76.884, 38.920], [-76.950, 38.920], [-76.950, 38.870]
+            ]]}
+          },
+          {
+            type: 'Feature',
+            properties: { name: 'Ward 5 — Trinidad / Ivy City' },
+            geometry: { type: 'Polygon', coordinates: [[
+              [-76.999, 38.893], [-76.960, 38.893], [-76.960, 38.918], [-76.999, 38.918], [-76.999, 38.893]
+            ]]}
+          }
+        ]
+      };
+
+      map.addSource('food-deserts', { type: 'geojson', data: foodDesertData });
+
+      map.addLayer({
+        id: 'food-deserts-fill',
+        type: 'fill',
+        source: 'food-deserts',
+        paint: { 'fill-color': '#d62728', 'fill-opacity': 0.18 }
+      });
+
+      map.addLayer({
+        id: 'food-deserts-outline',
+        type: 'line',
+        source: 'food-deserts',
+        paint: { 'line-color': '#d62728', 'line-width': 1.5, 'line-opacity': 0.5 }
+      });
+
+      const tooltip = new mapboxgl.Popup({ closeButton: false, closeOnClick: false });
+      map.on('mouseenter', 'food-deserts-fill', (e) => {
+        map.getCanvas().style.cursor = 'pointer';
+        tooltip.setLngLat(e.lngLat)
+          .setHTML(`<strong>${e.features[0].properties.name}</strong><br>Food desert — low income &amp; low grocery access`)
+          .addTo(map);
+      });
+      map.on('mouseleave', 'food-deserts-fill', () => {
+        map.getCanvas().style.cursor = '';
+        tooltip.remove();
+      });
+
+      // Legend
+      const legend = document.createElement('div');
+      legend.id = 'food-desert-legend';
+      legend.style.cssText = `
+        position: absolute; bottom: 36px; right: 10px;
+        background: rgba(255,255,255,0.92); padding: 8px 12px;
+        border-radius: 6px; font-size: 12px; line-height: 1.6;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.2); pointer-events: none; z-index: 10;
+      `;
+      legend.innerHTML = `
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:14px;height:14px;background:#d62728;opacity:0.5;border-radius:2px;flex-shrink:0"></div>
+          <span>Food desert (low income + low access)</span>
+        </div>
+      `;
+      document.getElementById('map').appendChild(legend);
     });
     
     map.on('error', (e) => {
