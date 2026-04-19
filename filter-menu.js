@@ -146,6 +146,59 @@ function handleMenuCheckboxChange(e) {
   updateShoppingListDisplay();
 }
 
+// Fuzzy matching functions
+// Calculate Levenshtein distance between two strings
+function levenshteinDistance(str1, str2) {
+  const len1 = str1.length;
+  const len2 = str2.length;
+  const matrix = Array(len2 + 1).fill(null).map(() => Array(len1 + 1).fill(0));
+
+  for (let i = 0; i <= len1; i++) {
+    matrix[0][i] = i;
+  }
+
+  for (let j = 0; j <= len2; j++) {
+    matrix[j][0] = j;
+  }
+
+  for (let j = 1; j <= len2; j++) {
+    for (let i = 1; i <= len1; i++) {
+      const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
+      matrix[j][i] = Math.min(
+        matrix[j][i - 1] + 1,
+        matrix[j - 1][i] + 1,
+        matrix[j - 1][i - 1] + indicator
+      );
+    }
+  }
+
+  return matrix[len2][len1];
+}
+
+// Check if two strings are similar enough (fuzzy match)
+// Returns true if match is good enough, false otherwise
+function isFuzzyMatch(input, target, threshold = 0.7) {
+  const input_lower = input.toLowerCase().trim();
+  const target_lower = target.toLowerCase().trim();
+
+  // Exact match
+  if (input_lower === target_lower) {
+    return true;
+  }
+
+  // Substring match (e.g., "chicken" matches "chicken breast")
+  if (target_lower.includes(input_lower) || input_lower.includes(target_lower)) {
+    return true;
+  }
+
+  // Fuzzy match using Levenshtein distance
+  const maxLen = Math.max(input_lower.length, target_lower.length);
+  const distance = levenshteinDistance(input_lower, target_lower);
+  const similarity = 1 - (distance / maxLen);
+
+  return similarity >= threshold;
+}
+
 function addToShoppingList(ingredient) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
   
@@ -156,6 +209,9 @@ function addToShoppingList(ingredient) {
     shoppingList.push(ingredient);
     localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
     updateShoppingListDisplay();
+    
+    // Refresh stores display and map with new shopping list filter
+    refreshStoresDisplay();
   }
 }
 
@@ -165,6 +221,9 @@ function removeFromShoppingList(ingredient) {
   // Remove ingredient
   const updatedList = shoppingList.filter(item => item.toLowerCase() !== ingredient.toLowerCase());
   localStorage.setItem('shoppingList', JSON.stringify(updatedList));
+  
+  // Refresh stores display and map with new shopping list filter
+  refreshStoresDisplay();
 }
 
 function updateShoppingListDisplay() {
@@ -236,15 +295,17 @@ if (applyFiltersBtn) {
       search: searchInput ? searchInput.value : '',
       location: document.getElementById('locationSelect')?.value || '',
       radius: document.getElementById('radiusSlider')?.value || 5,
-      minPrice: document.getElementById('minPriceSlider')?.value || 0,
-      maxPrice: document.getElementById('maxPriceSlider')?.value || 50,
-      freshness: document.getElementById('freshnessInput')?.value || 0,
+      minPrice: parseFloat(document.getElementById('minPriceSlider')?.value || 0),
+      maxPrice: parseFloat(document.getElementById('maxPriceSlider')?.value || 50),
+      freshness: parseInt(document.getElementById('freshnessInput')?.value || 7),
       availabilityStartDate: document.getElementById('availabilityStartDate')?.value || '',
       availabilityEndDate: document.getElementById('availabilityEndDate')?.value || '',
     };
 
     console.log('Filters applied:', filters);
-    // Send filters to backend or process them
+    
+    // Apply filters to stores display
+    applyStoreFilters(filters);
 
     // Switch to stores tab
     const storesTab = document.querySelector('.side-menu-tab[data-tab="stores"]');
@@ -364,4 +425,100 @@ function displayCartModal() {
     });
   });
 }
+
+// Function to refresh stores display with shopping list filter
+function refreshStoresDisplay() {
+  // Check if we're on a page with stores and map
+  if (typeof window.updateStoresListDisplay === 'function' && typeof window.allStores !== 'undefined') {
+    // Get currently filtered stores (respecting radius if applied)
+    // For now, show all stores but filtered by shopping list
+    window.updateStoresListDisplay(window.allStores);
+  }
+  
+  // If map filtering functions exist, update map markers
+  if (typeof window.filterStoresByShoppingList === 'function' && typeof window.updateStoreMarkersVisibility === 'function') {
+    // This will be called by the map when it's ready
+  }
+}
+
+// Store current filters globally
+window.currentFilters = {
+  maxPrice: 50,
+  freshness: 7,
+  shopping: []
+};
+
+// Function to apply price and freshness filters to stores
+function applyStoreFilters(filters) {
+  // Store filters globally for use in filtering logic
+  window.currentFilters.maxPrice = filters.maxPrice;
+  window.currentFilters.freshness = filters.freshness;
+  window.currentFilters.availabilityStartDate = filters.availabilityStartDate;
+  window.currentFilters.availabilityEndDate = filters.availabilityEndDate;
+  
+  // Filter stores based on price, freshness, and date range
+  const filteredStores = filterStoresByFilters(window.allStores, filters);
+  
+  // Update display
+  if (typeof window.updateStoresListDisplay === 'function') {
+    window.updateStoresListDisplay(filteredStores);
+  }
+  
+  // Update map if available
+  if (typeof window.updateStoreMarkersVisibility === 'function') {
+    window.updateStoreMarkersVisibility(filteredStores);
+  }
+}
+
+// Function to filter stores by all criteria (price, freshness, and date range)
+function filterStoresByFilters(stores, filters) {
+  return stores.filter(store => {
+    // Check if store has any products meeting all criteria
+    return store.productDetails && store.productDetails.some(product => {
+      const price = product.discountedPrice > 0 ? product.discountedPrice : product.originalPrice;
+      const meetsPrice = price <= filters.maxPrice;
+      const meetsFreshness = product.daysToExpiry <= filters.freshness;
+      const meetsDateRange = meetsAvailabilityDateRange(
+        product.daysToExpiry,
+        filters.availabilityStartDate,
+        filters.availabilityEndDate
+      );
+      
+      return meetsPrice && meetsFreshness && meetsDateRange;
+    });
+  });
+}
+
+// Function to check if a product is fresh for the entire availability date range
+// A product is available for a date if daysToExpiry > daysUntilDate
+function meetsAvailabilityDateRange(daysToExpiry, startDate, endDate) {
+  // If no date range specified, product is valid
+  if (!startDate && !endDate) {
+    return true;
+  }
+  
+  // If only start date specified
+  if (startDate && !endDate) {
+    const start = new Date(startDate);
+    const daysUntilStart = Math.ceil((start - new Date()) / (1000 * 60 * 60 * 24));
+    return daysToExpiry > daysUntilStart;
+  }
+  
+  // If only end date specified
+  if (!startDate && endDate) {
+    const end = new Date(endDate);
+    const daysUntilEnd = Math.ceil((end - new Date()) / (1000 * 60 * 60 * 24));
+    return daysToExpiry > daysUntilEnd;
+  }
+  
+  // If both dates specified, product must be fresh for entire range
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  
+  // Product must have more days to expiry than the end date
+  const daysUntilEnd = Math.ceil((end - new Date()) / (1000 * 60 * 60 * 24));
+  
+  return daysToExpiry > daysUntilEnd;
+}
+
 

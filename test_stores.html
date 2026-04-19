@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Stores Parser</title>
+</head>
+<body>
+  <h1>Stores Parser Test</h1>
+  <pre id="output"></pre>
+  <script src="stores.js"></script>
+  <script>
+    const output = document.getElementById('output');
+    output.textContent = 'Total stores: ' + window.allStores.length + '\n\n';
+    output.textContent += 'First 10 stores:\n';
+    window.allStores.slice(0, 10).forEach((s, i) => {
+      output.textContent += `${i+1}. ${s.storeName} (${s.storeAddress}): ${s.uniqueProducts} products\n`;
+    });
+    
+    output.textContent += '\n\nStores with most products:\n';
+    const sorted = [...window.allStores].sort((a, b) => b.uniqueProducts - a.uniqueProducts);
+    sorted.slice(0, 10).forEach((s, i) => {
+      output.textContent += `${i+1}. ${s.storeName}: ${s.uniqueProducts} products\n`;
+    });
+  </script>
+</body>
+</html>

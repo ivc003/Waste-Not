@@ -1,0 +1,2301 @@
+Stores.js script loaded
+Parsed stores: [
+  {
+    latitude: 38.930205375500556,
+    longitude: -77.03827261674164,
+    size: 'medium',
+    storeName: 'El Progreso Market',
+    storeAddress: '3158 MOUNT PLEASANT STREET NW',
+    uniqueProducts: 27,
+    products: [
+      'chicken drumstick', 'cucumber',
+      'butter',            'water',
+      'soy sauce',         'diced tomato',
+      'orange juice',      'corn meal',
+      'mustard',           'tuna',
+      'mayonnaise',        'beef patty',
+      'apple juice',       'eggs',
+      'peanut butter',     'ranch dressing',
+      'powdered milk',     'elbow macaroni',
+      'rice',              'carrot',
+      'spaghetti',         'onion',
+      'mozzarella cheese', 'american cheese',
+      'corn',              'pork bacon',
+      'ketchup'
+    ]
+  },
+  {
+    latitude: 38.92198694131714,
+    longitude: -77.03844186238213,
+    size: 'medium',
+    storeName: 'Harris Teeter',
+    storeAddress: '1631 KALORAMA ROAD NW',
+    uniqueProducts: 24,
+    products: [
+      'carrot',         'orange juice',
+      'corn',           'peanut butter',
+      'elbow macaroni', 'mozzarella cheese',
+      'green pepper',   'butter',
+      'eggs',           'chicken breast',
+      'black beans',    'tuna',
+      'pork bacon',     'diced tomato',
+      'onion',          'cucumber',
+      'soy sauce',      'mayonnaise',
+      'flour',          'apple juice',
+      'spaghetti',      'american cheese',
+      'ground beef',    'chicken drumstick'
+    ]
+  },
+  {
+    latitude: 38.95797669309216,
+    longitude: -77.00214446812893,
+    size: 'medium',
+    storeName: 'Walmart Supercenter',
+    storeAddress: '310 RIGGS ROAD NE',
+    uniqueProducts: 26,
+    products: [
+      'mustard',           'powdered milk',
+      'mayonnaise',        'corn',
+      'spaghetti',         'chicken breast',
+      'apple juice',       'cucumber',
+      'green pepper',      'ketchup',
+      'black beans',       'soy sauce',
+      'american cheese',   'carrot',
+      'onion',             'water',
+      'butter',            'ranch dressing',
+      'coffee',            'diced tomato',
+      'ground beef',       'rice',
+      'lettuce',           'peanut butter',
+      'chicken drumstick', 'pork bacon'
+    ]
+  },
+  {
+    latitude: 38.94450677593536,
+    longitude: -77.06317251045735,
+    size: 'medium',
+    storeName: 'Giant',
+    storeAddress: '4303 CONNECTICUT AVENUE NW',
+    uniqueProducts: 31,
+    products: [
+      'ketchup',           'black beans',
+      'chicken breast',    'powdered milk',
+      'flour',             'corn',
+      'chicken drumstick', 'eggs',
+      'diced tomato',      'american cheese',
+      'onion',             'ranch dressing',
+      'mustard',           'soy sauce',
+      'pork bacon',        'beef patty',
+      'cucumber',          'water',
+      'corn meal',         'tuna',
+      'orange juice',      'lettuce',
+      'butter',            'spaghetti',
+      'rice',              'ground beef',
+      'mayonnaise',        'coffee',
+      'apple juice',       'green pepper',
+      'peanut butter'
+    ]
+  },
+  {
+    latitude: 38.87622430239724,
+    longitude: -77.00009655130434,
+    size: 'medium',
+    storeName: 'Harris Teeter',
+    storeAddress: '401 M St SE',
+    uniqueProducts: 30,
+    products: [
+      'onion',             'apple juice',
+      'soy sauce',         'black beans',
+      'chicken drumstick', 'corn meal',
+      'spaghetti',         'ground beef',
+      'pork bacon',        'eggs',
+      'mayonnaise',        'flour',
+      'coffee',            'elbow macaroni',
+      'rice',              'tuna',
+      'cucumber',          'diced tomato',
+      'powdered milk',     'water',
+      'orange juice',      'ranch dressing',
+      'butter',            'chicken breast',
+      'peanut butter',     'carrot',
+      'ketchup',           'mustard',
+      'beef patty',        'lettuce'
+    ]
+  },
+  {
+    latitude: 38.93845637077938,
+    longitude: -77.02485883166267,
+    size: 'large',
+    storeName: 'Safeway',
+    storeAddress: '3830 GEORGIA AVENUE NW',
+    uniqueProducts: 27,
+    products: [
+      'rice',              'diced tomato',
+      'lettuce',           'soy sauce',
+      'chicken breast',    'apple juice',
+      'coffee',            'flour',
+      'mustard',           'black beans',
+      'tuna',              'butter',
+      'ketchup',           'cucumber',
+      'corn meal',         'elbow macaroni',
+      'ground beef',       'powdered milk',
+      'corn',              'onion',
+      'chicken drumstick', 'american cheese',
+      'pork bacon',        'mozzarella cheese',
+      'carrot',            'mayonnaise',
+      'ranch dressing'
+    ]
+  },
+  {
+    latitude: 38.920762105757646,
+    longitude: -77.03208536793325,
+    size: 'medium',
+    storeName: 'Streets Market',
+    storeAddress: '2400 14TH STREET NW',
+    uniqueProducts: 23,
+    products: [
+      'black beans',       'water',
+      'rice',              'mustard',
+      'chicken drumstick', 'green pepper',
+      'flour',             'orange juice',
+      'mayonnaise',        'powdered milk',
+      'ranch dressing',    'american cheese',
+      'pork bacon',        'soy sauce',
+      'eggs',              'chicken breast',
+      'onion',             'spaghetti',
+      'ground beef',       'mozzarella cheese',
+      'lettuce',           'carrot',
+      'peanut butter'
+    ]
+  },
+  {
+    latitude: 38.912005027447265,
+    longitude: -77.00400185770731,
+    size: 'medium',
+    storeName: 'Union Kitchen Grocery',
+    storeAddress: '1625 ECKINGTON PLACE NE',
+    uniqueProducts: 29,
+    products: [
+      'corn',              'pork bacon',
+      'green pepper',      'ground beef',
+      'american cheese',   'water',
+      'ketchup',           'carrot',
+      'coffee',            'chicken drumstick',
+      'apple juice',       'soy sauce',
+      'mozzarella cheese', 'cucumber',
+      'butter',            'ranch dressing',
+      'spaghetti',         'eggs',
+      'chicken breast',    'onion',
+      'powdered milk',     'orange juice',
+      'tuna',              'mayonnaise',
+      'mustard',           'diced tomato',
+      'rice',              'flour',
+      'black beans'
+    ]
+  },
+  {
+    latitude: 38.929308227973394,
+    longitude: -77.03298601467988,
+    size: 'medium',
+    storeName: 'Target',
+    storeAddress: '3100 14TH STREET NW',
+    uniqueProducts: 28,
+    products: [
+      'mustard',           'pork bacon',
+      'mayonnaise',        'corn',
+      'butter',            'tuna',
+      'diced tomato',      'corn meal',
+      'mozzarella cheese', 'chicken breast',
+      'cucumber',          'rice',
+      'soy sauce',         'onion',
+      'carrot',            'ketchup',
+      'chicken drumstick', 'ranch dressing',
+      'green pepper',      'black beans',
+      'powdered milk',     'beef patty',
+      'elbow macaroni',    'coffee',
+      'american cheese',   'lettuce',
+      'ground beef',       'eggs'
+    ]
+  },
+  {
+    latitude: 38.91610088111982,
+    longitude: -77.03224561287333,
+    size: 'medium',
+    storeName: "Trader Joe's",
+    storeAddress: '1914 14TH STREET NW',
+    uniqueProducts: 30,
+    products: [
+      'pork bacon',        'mustard',
+      'tuna',              'butter',
+      'water',             'rice',
+      'soy sauce',         'green pepper',
+      'coffee',            'chicken breast',
+      'lettuce',           'american cheese',
+      'carrot',            'onion',
+      'apple juice',       'spaghetti',
+      'corn',              'beef patty',
+      'ground beef',       'cucumber',
+      'elbow macaroni',    'mozzarella cheese',
+      'diced tomato',      'ranch dressing',
+      'peanut butter',     'ketchup',
+      'corn meal',         'eggs',
+      'chicken drumstick', 'powdered milk'
+    ]
+  },
+  {
+    latitude: 38.8972029100673,
+    longitude: -77.00221180589779,
+    size: 'medium',
+    storeName: 'Union Kitchen Grocery',
+    storeAddress: '538 3RD STREET NE',
+    uniqueProducts: 26,
+    products: [
+      'soy sauce',         'apple juice',
+      'diced tomato',      'beef patty',
+      'cucumber',          'eggs',
+      'rice',              'flour',
+      'ketchup',           'corn meal',
+      'tuna',              'chicken breast',
+      'chicken drumstick', 'onion',
+      'powdered milk',     'mustard',
+      'ground beef',       'mayonnaise',
+      'water',             'peanut butter',
+      'american cheese',   'lettuce',
+      'orange juice',      'mozzarella cheese',
+      'pork bacon',        'butter'
+    ]
+  },
+  {
+    latitude: 38.91744140841088,
+    longitude: -77.09596212516874,
+    size: 'small',
+    storeName: 'Safeway',
+    storeAddress: '4865 MACARTHUR BOULEVARD NW',
+    uniqueProducts: 22,
+    products: [
+      'corn meal',      'ranch dressing',
+      'carrot',         'spaghetti',
+      'cucumber',       'apple juice',
+      'eggs',           'peanut butter',
+      'beef patty',     'lettuce',
+      'pork bacon',     'ketchup',
+      'corn',           'chicken breast',
+      'powdered milk',  'coffee',
+      'elbow macaroni', 'flour',
+      'diced tomato',   'soy sauce',
+      'rice',           'ground beef'
+    ]
+  },
+  {
+    latitude: 38.95630298829647,
+    longitude: -77.08386082768219,
+    size: 'large',
+    storeName: 'Rodman’s',
+    storeAddress: '5100 WISCONSIN AVENUE NW',
+    uniqueProducts: 28,
+    products: [
+      'water',             'mayonnaise',
+      'cucumber',          'powdered milk',
+      'chicken drumstick', 'carrot',
+      'black beans',       'ground beef',
+      'lettuce',           'eggs',
+      'peanut butter',     'butter',
+      'green pepper',      'corn',
+      'orange juice',      'soy sauce',
+      'ketchup',           'chicken breast',
+      'ranch dressing',    'apple juice',
+      'corn meal',         'elbow macaroni',
+      'beef patty',        'onion',
+      'flour',             'pork bacon',
+      'mozzarella cheese', 'american cheese'
+    ]
+  },
+  {
+    latitude: 38.91731297728028,
+    longitude: -77.06868826971429,
+    size: 'medium',
+    storeName: "Trader Joe's",
+    storeAddress: '2101 WISCONSIN AVENUE NW #A',
+    uniqueProducts: 29,
+    products: [
+      'spaghetti',         'lettuce',
+      'onion',             'chicken breast',
+      'corn meal',         'powdered milk',
+      'mustard',           'carrot',
+      'ranch dressing',    'green pepper',
+      'corn',              'mayonnaise',
+      'pork bacon',        'coffee',
+      'beef patty',        'cucumber',
+      'flour',             'rice',
+      'american cheese',   'chicken drumstick',
+      'water',             'peanut butter',
+      'elbow macaroni',    'eggs',
+      'ketchup',           'tuna',
+      'mozzarella cheese', 'ground beef',
+      'soy sauce'
+    ]
+  },
+  {
+    latitude: 38.93213727601643,
+    longitude: -76.99587125545985,
+    size: 'medium',
+    storeName: "Trader Joe's",
+    storeAddress: '701 MONROE STREET NE',
+    uniqueProducts: 26,
+    products: [
+      'cucumber',          'coffee',
+      'black beans',       'chicken breast',
+      'corn meal',         'tuna',
+      'mustard',           'lettuce',
+      'ranch dressing',    'mayonnaise',
+      'butter',            'eggs',
+      'ketchup',           'elbow macaroni',
+      'onion',             'beef patty',
+      'peanut butter',     'flour',
+      'rice',              'green pepper',
+      'water',             'orange juice',
+      'pork bacon',        'spaghetti',
+      'mozzarella cheese', 'apple juice'
+    ]
+  },
+  {
+    latitude: 38.88474156067011,
+    longitude: -76.9955259196549,
+    size: 'medium',
+    storeName: "Trader Joe's",
+    storeAddress: '750 PENNSYLVANIA AVENUE SE',
+    uniqueProducts: 26,
+    products: [
+      'cucumber',          'orange juice',
+      'ranch dressing',    'beef patty',
+      'rice',              'green pepper',
+      'carrot',            'pork bacon',
+      'peanut butter',     'ground beef',
+      'chicken breast',    'american cheese',
+      'soy sauce',         'corn meal',
+      'water',             'spaghetti',
+      'chicken drumstick', 'elbow macaroni',
+      'tuna',              'onion',
+      'powdered milk',     'butter',
+      'corn',              'lettuce',
+      'mustard',           'mayonnaise'
+    ]
+  },
+  {
+    latitude: 38.90949013493613,
+    longitude: -77.04836546433359,
+    size: 'medium',
+    storeName: 'Metro Supermarket',
+    storeAddress: '2130 P STREET NW #5',
+    uniqueProducts: 25,
+    products: [
+      'corn',              'butter',
+      'cucumber',          'elbow macaroni',
+      'onion',             'ranch dressing',
+      'chicken drumstick', 'tuna',
+      'water',             'rice',
+      'mustard',           'chicken breast',
+      'green pepper',      'flour',
+      'spaghetti',         'powdered milk',
+      'peanut butter',     'ground beef',
+      'carrot',            'apple juice',
+      'mayonnaise',        'black beans',
+      'beef patty',        'orange juice',
+      'american cheese'
+    ]
+  },
+  {
+    latitude: 38.88354906285551,
+    longitude: -76.98655150803029,
+    size: 'small',
+    storeName: 'Safeway',
+    storeAddress: '415 14TH STREET SE',
+    uniqueProducts: 24,
+    products: [
+      'water',             'soy sauce',
+      'eggs',              'coffee',
+      'corn',              'beef patty',
+      'green pepper',      'rice',
+      'mozzarella cheese', 'ketchup',
+      'chicken breast',    'onion',
+      'diced tomato',      'flour',
+      'carrot',            'black beans',
+      'ground beef',       'corn meal',
+      'orange juice',      'apple juice',
+      'american cheese',   'mustard',
+      'ranch dressing',    'peanut butter'
+    ]
+  },
+  {
+    latitude: 38.93944688026949,
+    longitude: -77.0330336144517,
+    size: 'medium',
+    storeName: 'Morazan Grocery Store',
+    storeAddress: '3928 14TH STREET NW',
+    uniqueProducts: 27,
+    products: [
+      'tuna',           'peanut butter',
+      'flour',          'orange juice',
+      'green pepper',   'mayonnaise',
+      'ground beef',    'onion',
+      'black beans',    'eggs',
+      'corn',           'beef patty',
+      'water',          'carrot',
+      'spaghetti',      'chicken breast',
+      'elbow macaroni', 'chicken drumstick',
+      'powdered milk',  'ketchup',
+      'soy sauce',      'mustard',
+      'coffee',         'butter',
+      'lettuce',        'american cheese',
+      'ranch dressing'
+    ]
+  },
+  {
+    latitude: 38.929450971217975,
+    longitude: -76.97481915156214,
+    size: 'medium',
+    storeName: 'Good Food Markets',
+    storeAddress: '2006 RHODE ISLAND AVENUE NE',
+    uniqueProducts: 28,
+    products: [
+      'butter',            'powdered milk',
+      'tuna',              'corn meal',
+      'lettuce',           'spaghetti',
+      'mayonnaise',        'black beans',
+      'orange juice',      'green pepper',
+      'chicken drumstick', 'coffee',
+      'apple juice',       'beef patty',
+      'soy sauce',         'pork bacon',
+      'peanut butter',     'onion',
+      'chicken breast',    'corn',
+      'cucumber',          'elbow macaroni',
+      'rice',              'water',
+      'mozzarella cheese', 'ketchup',
+      'eggs',              'american cheese'
+    ]
+  },
+  {
+    latitude: 38.967771235004186,
+    longitude: -77.02779827340463,
+    size: 'medium',
+    storeName: 'Jocelyn’s Market',
+    storeAddress: '6404 GEORGIA AVENUE NW',
+    uniqueProducts: 25,
+    products: [
+      'rice',              'green pepper',
+      'cucumber',          'flour',
+      'american cheese',   'ground beef',
+      'carrot',            'ketchup',
+      'lettuce',           'water',
+      'mozzarella cheese', 'corn',
+      'powdered milk',     'soy sauce',
+      'peanut butter',     'tuna',
+      'mustard',           'pork bacon',
+      'chicken breast',    'ranch dressing',
+      'butter',            'eggs',
+      'diced tomato',      'chicken drumstick',
+      'spaghetti'
+    ]
+  },
+  {
+    latitude: 38.93585941366032,
+    longitude: -77.0580161995249,
+    size: 'small',
+    storeName: 'Target',
+    storeAddress: '3505 CONNECTICUT AVENUE NW',
+    uniqueProducts: 27,
+    products: [
+      'eggs',              'green pepper',
+      'soy sauce',         'lettuce',
+      'cucumber',          'chicken breast',
+      'corn',              'onion',
+      'black beans',       'corn meal',
+      'elbow macaroni',    'butter',
+      'orange juice',      'mozzarella cheese',
+      'tuna',              'water',
+      'carrot',            'spaghetti',
+      'mustard',           'american cheese',
+      'chicken drumstick', 'ground beef',
+      'pork bacon',        'diced tomato',
+      'powdered milk',     'flour',
+      'peanut butter'
+    ]
+  },
+  {
+    latitude: 38.96460071978334,
+    longitude: -77.07490966531478,
+    size: 'small',
+    storeName: 'Safeway',
+    storeAddress: '5545 CONNECTICUT AVENUE NW',
+    uniqueProducts: 28,
+    products: [
+      'apple juice',     'cucumber',
+      'flour',           'corn',
+      'american cheese', 'rice',
+      'eggs',            'diced tomato',
+      'mayonnaise',      'pork bacon',
+      'powdered milk',   'elbow macaroni',
+      'water',           'ground beef',
+      'ketchup',         'butter',
+      'mustard',         'onion',
+      'spaghetti',       'corn meal',
+      'tuna',            'coffee',
+      'chicken breast',  'beef patty',
+      'ranch dressing',  'carrot',
+      'peanut butter',   'soy sauce'
+    ]
+  },
+  {
+    latitude: 38.98346370182273,
+    longitude: -77.02606575460844,
+    size: 'medium',
+    storeName: 'International Progresso Market',
+    storeAddress: '7719 GEORGIA AVENUE NW',
+    uniqueProducts: 27,
+    products: [
+      'american cheese', 'onion',
+      'spaghetti',       'water',
+      'green pepper',    'flour',
+      'cucumber',        'black beans',
+      'beef patty',      'chicken drumstick',
+      'mustard',         'mayonnaise',
+      'soy sauce',       'ranch dressing',
+      'powdered milk',   'coffee',
+      'chicken breast',  'peanut butter',
+      'apple juice',     'butter',
+      'rice',            'diced tomato',
+      'ketchup',         'ground beef',
+      'eggs',            'elbow macaroni',
+      'carrot'
+    ]
+  },
+  {
+    latitude: 38.92085095656864,
+    longitude: -76.95088115617462,
+    size: 'medium',
+    storeName: 'Costco Wholesale',
+    storeAddress: '2441 MARKET STREET NE',
+    uniqueProducts: 26,
+    products: [
+      'eggs',              'rice',
+      'pork bacon',        'carrot',
+      'corn meal',         'mayonnaise',
+      'black beans',       'soy sauce',
+      'mustard',           'ranch dressing',
+      'mozzarella cheese', 'ketchup',
+      'coffee',            'apple juice',
+      'orange juice',      'tuna',
+      'peanut butter',     'lettuce',
+      'elbow macaroni',    'spaghetti',
+      'water',             'butter',
+      'beef patty',        'american cheese',
+      'flour',             'chicken breast'
+    ]
+  },
+  {
+    latitude: 38.93082173909143,
+    longitude: -77.03192369024724,
+    size: 'medium',
+    storeName: 'Giant',
+    storeAddress: '1345 PARK ROAD NW',
+    uniqueProducts: 27,
+    products: [
+      'chicken breast',  'diced tomato',
+      'corn',            'chicken drumstick',
+      'ground beef',     'lettuce',
+      'spaghetti',       'pork bacon',
+      'onion',           'mustard',
+      'black beans',     'orange juice',
+      'elbow macaroni',  'powdered milk',
+      'eggs',            'flour',
+      'mayonnaise',      'rice',
+      'tuna',            'mozzarella cheese',
+      'butter',          'peanut butter',
+      'water',           'carrot',
+      'american cheese', 'apple juice',
+      'cucumber'
+    ]
+  },
+  {
+    latitude: 38.97610115429368,
+    longitude: -77.02816620326477,
+    size: 'large',
+    storeName: 'Whole Foods Market',
+    storeAddress: '7130 12TH STREET NW',
+    uniqueProducts: 26,
+    products: [
+      'green pepper',      'flour',
+      'corn',              'beef patty',
+      'spaghetti',         'cucumber',
+      'butter',            'mayonnaise',
+      'ground beef',       'peanut butter',
+      'corn meal',         'apple juice',
+      'mozzarella cheese', 'coffee',
+      'tuna',              'diced tomato',
+      'chicken drumstick', 'orange juice',
+      'eggs',              'powdered milk',
+      'ranch dressing',    'soy sauce',
+      'mustard',           'elbow macaroni',
+      'black beans',       'rice'
+    ]
+  },
+  {
+    latitude: 38.935166426639285,
+    longitude: -77.05779049421417,
+    size: 'small',
+    storeName: 'Yes! Organic',
+    storeAddress: '3425 CONNECTICUT AVENUE NW',
+    uniqueProducts: 29,
+    products: [
+      'butter',            'spaghetti',
+      'black beans',       'carrot',
+      'elbow macaroni',    'soy sauce',
+      'eggs',              'onion',
+      'lettuce',           'cucumber',
+      'mozzarella cheese', 'orange juice',
+      'water',             'diced tomato',
+      'ranch dressing',    'tuna',
+      'pork bacon',        'mustard',
+      'powdered milk',     'peanut butter',
+      'american cheese',   'chicken breast',
+      'mayonnaise',        'green pepper',
+      'coffee',            'ketchup',
+      'beef patty',        'ground beef',
+      'corn'
+    ]
+  },
+  {
+    latitude: 38.90091857333817,
+    longitude: -77.04906991376863,
+    size: 'small',
+    storeName: 'Whole Foods Market',
+    storeAddress: '2201 I STREET NW',
+    uniqueProducts: 26,
+    products: [
+      'black beans',    'chicken drumstick',
+      'diced tomato',   'mozzarella cheese',
+      'ground beef',    'peanut butter',
+      'green pepper',   'butter',
+      'water',          'eggs',
+      'lettuce',        'corn',
+      'onion',          'orange juice',
+      'spaghetti',      'mustard',
+      'ketchup',        'tuna',
+      'flour',          'mayonnaise',
+      'soy sauce',      'apple juice',
+      'rice',           'corn meal',
+      'elbow macaroni', 'beef patty'
+    ]
+  },
+  {
+    latitude: 38.90949910711764,
+    longitude: -77.03356774007037,
+    size: 'medium',
+    storeName: 'Whole Foods Market',
+    storeAddress: '1440 P STREET NW',
+    uniqueProducts: 27,
+    products: [
+      'flour',             'powdered milk',
+      'onion',             'eggs',
+      'mustard',           'soy sauce',
+      'mayonnaise',        'elbow macaroni',
+      'cucumber',          'chicken drumstick',
+      'mozzarella cheese', 'lettuce',
+      'american cheese',   'rice',
+      'corn meal',         'spaghetti',
+      'water',             'apple juice',
+      'orange juice',      'ranch dressing',
+      'pork bacon',        'coffee',
+      'tuna',              'carrot',
+      'butter',            'diced tomato',
+      'peanut butter'
+    ]
+  },
+  {
+    latitude: 38.912057515959056,
+    longitude: -77.03895582799446,
+    size: 'medium',
+    storeName: 'Safeway',
+    storeAddress: '1701 CORCORAN STREET NW',
+    uniqueProducts: 27,
+    products: [
+      'elbow macaroni',    'corn',
+      'american cheese',   'ranch dressing',
+      'rice',              'soy sauce',
+      'lettuce',           'green pepper',
+      'mustard',           'orange juice',
+      'chicken drumstick', 'peanut butter',
+      'carrot',            'butter',
+      'beef patty',        'black beans',
+      'powdered milk',     'chicken breast',
+      'spaghetti',         'mozzarella cheese',
+      'tuna',              'flour',
+      'eggs',              'cucumber',
+      'water',             'onion',
+      'pork bacon'
+    ]
+  },
+  {
+    latitude: 38.92093428097332,
+    longitude: -77.07161523313137,
+    size: 'large',
+    storeName: 'Whole Foods Market',
+    storeAddress: '2323 WISCONSIN AVENUE NW',
+    uniqueProducts: 24,
+    products: [
+      'flour',       'green pepper',
+      'eggs',        'coffee',
+      'carrot',      'spaghetti',
+      'corn meal',   'beef patty',
+      'onion',       'corn',
+      'ground beef', 'butter',
+      'black beans', 'powdered milk',
+      'water',       'pork bacon',
+      'lettuce',     'chicken breast',
+      'rice',        'peanut butter',
+      'cucumber',    'elbow macaroni',
+      'mayonnaise',  'tuna'
+    ]
+  },
+  {
+    latitude: 38.905007945629904,
+    longitude: -77.0290444232359,
+    size: 'medium',
+    storeName: 'Streets Market',
+    storeAddress: '1221 MASSACHUSSETTS AVENUE NW',
+    uniqueProducts: 28,
+    products: [
+      'soy sauce',         'orange juice',
+      'onion',             'chicken drumstick',
+      'mustard',           'corn meal',
+      'ground beef',       'beef patty',
+      'ketchup',           'water',
+      'corn',              'butter',
+      'mayonnaise',        'powdered milk',
+      'peanut butter',     'green pepper',
+      'american cheese',   'black beans',
+      'spaghetti',         'rice',
+      'cucumber',          'tuna',
+      'flour',             'diced tomato',
+      'mozzarella cheese', 'elbow macaroni',
+      'apple juice',       'chicken breast'
+    ]
+  },
+  {
+    latitude: 38.90040433820318,
+    longitude: -77.01198706322644,
+    size: 'medium',
+    storeName: 'Walmart Supercenter',
+    storeAddress: '99 H STREET NW',
+    uniqueProducts: 24,
+    products: [
+      'peanut butter',  'onion',
+      'apple juice',    'powdered milk',
+      'cucumber',       'coffee',
+      'carrot',         'ketchup',
+      'mustard',        'orange juice',
+      'beef patty',     'spaghetti',
+      'eggs',           'water',
+      'elbow macaroni', 'corn',
+      'green pepper',   'ground beef',
+      'chicken breast', 'pork bacon',
+      'rice',           'ranch dressing',
+      'black beans',    'mozzarella cheese'
+    ]
+  },
+  {
+    latitude: 38.904767550491435,
+    longitude: -77.06515039926713,
+    size: 'small',
+    storeName: 'Dean & DeLuca',
+    storeAddress: '3276 M STREET NW',
+    uniqueProducts: 28,
+    products: [
+      'diced tomato',    'lettuce',
+      'cucumber',        'apple juice',
+      'onion',           'beef patty',
+      'flour',           'elbow macaroni',
+      'peanut butter',   'tuna',
+      'black beans',     'chicken breast',
+      'butter',          'green pepper',
+      'spaghetti',       'water',
+      'ranch dressing',  'ground beef',
+      'pork bacon',      'chicken drumstick',
+      'ketchup',         'soy sauce',
+      'american cheese', 'corn meal',
+      'coffee',          'corn',
+      'orange juice',    'mustard'
+    ]
+  },
+  {
+    latitude: 38.901569290610794,
+    longitude: -76.97803182686681,
+    size: 'medium',
+    storeName: 'Aldi',
+    storeAddress: '901 17TH STREET NE',
+    uniqueProducts: 26,
+    products: [
+      'corn meal',      'mustard',
+      'ranch dressing', 'ground beef',
+      'pork bacon',     'powdered milk',
+      'lettuce',        'diced tomato',
+      'green pepper',   'flour',
+      'soy sauce',      'mozzarella cheese',
+      'black beans',    'rice',
+      'water',          'peanut butter',
+      'apple juice',    'cucumber',
+      'eggs',           'elbow macaroni',
+      'beef patty',     'tuna',
+      'ketchup',        'corn',
+      'onion',          'carrot'
+    ]
+  },
+  {
+    latitude: 38.91320970325574,
+    longitude: -77.03174182533907,
+    size: 'medium',
+    storeName: 'AmazonFresh',
+    storeAddress: '1733 14TH STREET NW',
+    uniqueProducts: 28,
+    products: [
+      'american cheese',   'chicken breast',
+      'onion',             'flour',
+      'water',             'powdered milk',
+      'mustard',           'pork bacon',
+      'peanut butter',     'diced tomato',
+      'ranch dressing',    'soy sauce',
+      'elbow macaroni',    'butter',
+      'carrot',            'orange juice',
+      'mozzarella cheese', 'rice',
+      'chicken drumstick', 'eggs',
+      'corn',              'spaghetti',
+      'mayonnaise',        'corn meal',
+      'cucumber',          'coffee',
+      'green pepper',      'black beans'
+    ]
+  },
+  {
+    latitude: 38.94103647207613,
+    longitude: -77.02552897075412,
+    size: 'large',
+    storeName: 'Yes! Organic',
+    storeAddress: '4100 GEORGIA AVENUE NW',
+    uniqueProducts: 28,
+    products: [
+      'rice',           'coffee',
+      'lettuce',        'chicken breast',
+      'orange juice',   'mayonnaise',
+      'elbow macaroni', 'spaghetti',
+      'water',          'peanut butter',
+      'ranch dressing', 'corn',
+      'eggs',           'powdered milk',
+      'green pepper',   'carrot',
+      'diced tomato',   'black beans',
+      'flour',          'american cheese',
+      'tuna',           'ketchup',
+      'mustard',        'cucumber',
+      'ground beef',    'butter',
+      'onion',          'soy sauce'
+    ]
+  },
+  {
+    latitude: 38.94045114501989,
+    longitude: -77.07726641003441,
+    size: 'small',
+    storeName: 'Wegmans',
+    storeAddress: '41 RIDGE SQUARE NW',
+    uniqueProducts: 27,
+    products: [
+      'pork bacon',        'orange juice',
+      'onion',             'black beans',
+      'soy sauce',         'american cheese',
+      'apple juice',       'beef patty',
+      'ketchup',           'mustard',
+      'cucumber',          'corn',
+      'spaghetti',         'powdered milk',
+      'chicken drumstick', 'peanut butter',
+      'carrot',            'ranch dressing',
+      'eggs',              'corn meal',
+      'rice',              'green pepper',
+      'flour',             'mozzarella cheese',
+      'butter',            'lettuce',
+      'diced tomato'
+    ]
+  },
+  {
+    latitude: 38.906023064916525,
+    longitude: -77.0054945492568,
+    size: 'small',
+    storeName: 'Harris Teeter',
+    storeAddress: '1201 1ST STREET NE',
+    uniqueProducts: 28,
+    products: [
+      'coffee',            'cucumber',
+      'water',             'ranch dressing',
+      'mozzarella cheese', 'corn',
+      'flour',             'beef patty',
+      'pork bacon',        'chicken breast',
+      'corn meal',         'apple juice',
+      'chicken drumstick', 'ketchup',
+      'peanut butter',     'american cheese',
+      'lettuce',           'tuna',
+      'carrot',            'mayonnaise',
+      'spaghetti',         'rice',
+      'elbow macaroni',    'black beans',
+      'butter',            'orange juice',
+      'diced tomato',      'mustard'
+    ]
+  },
+  {
+    latitude: 38.91626798854291,
+    longitude: -76.98201281403125,
+    size: 'medium',
+    storeName: 'Target',
+    storeAddress: '1515 NEW YORK AVENUE NE',
+    uniqueProducts: 27,
+    products: [
+      'onion',             'ranch dressing',
+      'elbow macaroni',    'ketchup',
+      'mozzarella cheese', 'black beans',
+      'pork bacon',        'mayonnaise',
+      'lettuce',           'water',
+      'cucumber',          'eggs',
+      'peanut butter',     'diced tomato',
+      'mustard',           'tuna',
+      'apple juice',       'coffee',
+      'corn meal',         'flour',
+      'beef patty',        'orange juice',
+      'carrot',            'ground beef',
+      'chicken breast',    'corn',
+      'spaghetti'
+    ]
+  },
+  {
+    latitude: 38.880209661423635,
+    longitude: -76.98662497531038,
+    size: 'small',
+    storeName: 'Harris Teeter',
+    storeAddress: '1350 POTOMAC AVENUE SE',
+    uniqueProducts: 26,
+    products: [
+      'cucumber',          'ketchup',
+      'elbow macaroni',    'diced tomato',
+      'corn',              'corn meal',
+      'butter',            'water',
+      'soy sauce',         'apple juice',
+      'tuna',              'onion',
+      'mustard',           'black beans',
+      'rice',              'eggs',
+      'chicken breast',    'spaghetti',
+      'green pepper',      'carrot',
+      'powdered milk',     'pork bacon',
+      'chicken drumstick', 'ranch dressing',
+      'beef patty',        'lettuce'
+    ]
+  },
+  {
+    latitude: 38.9485365777595,
+    longitude: -77.08055249629902,
+    size: 'medium',
+    storeName: 'Target',
+    storeAddress: '4500 WISCONSIN AVENUE NW',
+    uniqueProducts: 28,
+    products: [
+      'water',             'tuna',
+      'orange juice',      'flour',
+      'ranch dressing',    'coffee',
+      'green pepper',      'eggs',
+      'onion',             'soy sauce',
+      'carrot',            'corn meal',
+      'diced tomato',      'lettuce',
+      'butter',            'cucumber',
+      'ground beef',       'chicken breast',
+      'mustard',           'beef patty',
+      'mayonnaise',        'chicken drumstick',
+      'pork bacon',        'corn',
+      'apple juice',       'spaghetti',
+      'mozzarella cheese', 'ketchup'
+    ]
+  },
+  {
+    latitude: 38.908770717071064,
+    longitude: -77.02212530524505,
+    size: 'medium',
+    storeName: 'Giant',
+    storeAddress: '1400 7TH STREET NW',
+    uniqueProducts: 24,
+    products: [
+      'corn meal',         'soy sauce',
+      'black beans',       'ranch dressing',
+      'tuna',              'orange juice',
+      'ground beef',       'elbow macaroni',
+      'mustard',           'eggs',
+      'apple juice',       'mozzarella cheese',
+      'water',             'diced tomato',
+      'onion',             'beef patty',
+      'green pepper',      'chicken breast',
+      'chicken drumstick', 'american cheese',
+      'coffee',            'ketchup',
+      'rice',              'lettuce'
+    ]
+  },
+  {
+    latitude: 38.91612588552247,
+    longitude: -77.06756091263732,
+    size: 'medium',
+    storeName: 'Safeway',
+    storeAddress: '1855 WISCONSIN AVENUE NW',
+    uniqueProducts: 30,
+    products: [
+      'mayonnaise',     'chicken drumstick',
+      'tuna',           'corn meal',
+      'onion',          'corn',
+      'apple juice',    'beef patty',
+      'peanut butter',  'carrot',
+      'flour',          'american cheese',
+      'green pepper',   'diced tomato',
+      'ground beef',    'elbow macaroni',
+      'pork bacon',     'powdered milk',
+      'spaghetti',      'ketchup',
+      'ranch dressing', 'mustard',
+      'water',          'soy sauce',
+      'chicken breast', 'mozzarella cheese',
+      'butter',         'orange juice',
+      'black beans',    'rice'
+    ]
+  },
+  {
+    latitude: 38.90040448832144,
+    longitude: -76.99814738644127,
+    size: 'small',
+    storeName: 'Whole Foods Market',
+    storeAddress: '600 H STREET NE',
+    uniqueProducts: 30,
+    products: [
+      'ranch dressing',    'water',
+      'mozzarella cheese', 'pork bacon',
+      'orange juice',      'carrot',
+      'butter',            'tuna',
+      'rice',              'ketchup',
+      'diced tomato',      'apple juice',
+      'onion',             'spaghetti',
+      'beef patty',        'cucumber',
+      'mayonnaise',        'flour',
+      'corn meal',         'mustard',
+      'soy sauce',         'lettuce',
+      'green pepper',      'chicken breast',
+      'black beans',       'coffee',
+      'powdered milk',     'ground beef',
+      'american cheese',   'peanut butter'
+    ]
+  },
+  {
+    latitude: 38.90708611298733,
+    longitude: -77.02372205751965,
+    size: 'large',
+    storeName: 'Union Kitchen Grocery',
+    storeAddress: '1251 9TH STREET NW',
+    uniqueProducts: 27,
+    products: [
+      'soy sauce',         'black beans',
+      'chicken drumstick', 'ranch dressing',
+      'corn',              'lettuce',
+      'apple juice',       'pork bacon',
+      'mustard',           'eggs',
+      'tuna',              'rice',
+      'mayonnaise',        'cucumber',
+      'orange juice',      'powdered milk',
+      'green pepper',      'peanut butter',
+      'flour',             'butter',
+      'coffee',            'ketchup',
+      'spaghetti',         'diced tomato',
+      'ground beef',       'water',
+      'mozzarella cheese'
+    ]
+  },
+  {
+    latitude: 38.91975734622245,
+    longitude: -77.02486798416663,
+    size: 'small',
+    storeName: 'Whole Foods Market',
+    storeAddress: '967 FLORIDA AVENUE NW',
+    uniqueProducts: 24,
+    products: [
+      'powdered milk',   'elbow macaroni',
+      'flour',           'chicken drumstick',
+      'cucumber',        'ketchup',
+      'eggs',            'corn',
+      'butter',          'carrot',
+      'pork bacon',      'ground beef',
+      'mustard',         'lettuce',
+      'coffee',          'mayonnaise',
+      'orange juice',    'soy sauce',
+      'american cheese', 'mozzarella cheese',
+      'onion',           'ranch dressing',
+      'water',           'tuna'
+    ]
+  },
+  {
+    latitude: 38.90057508208876,
+    longitude: -76.97977231662443,
+    size: 'medium',
+    storeName: 'Safeway',
+    storeAddress: '1601 MARYLAND AVENUE NE',
+    uniqueProducts: 25,
+    products: [
+      'corn meal',         'water',
+      'lettuce',           'mustard',
+      'orange juice',      'cucumber',
+      'pork bacon',        'diced tomato',
+      'peanut butter',     'soy sauce',
+      'apple juice',       'elbow macaroni',
+      'powdered milk',     'coffee',
+      'american cheese',   'black beans',
+      'ketchup',           'tuna',
+      'eggs',              'carrot',
+      'chicken drumstick', 'spaghetti',
+      'green pepper',      'corn',
+      'beef patty'
+    ]
+  },
+  {
+    latitude: 38.90349680089168,
+    longitude: -77.01835490587573,
+    size: 'small',
+    storeName: 'Safeway',
+    storeAddress: '490 L STREET NW',
+    uniqueProducts: 30,
+    products: [
+      'soy sauce',      'orange juice',
+      'water',          'green pepper',
+      'coffee',         'spaghetti',
+      'carrot',         'peanut butter',
+      'mayonnaise',     'american cheese',
+      'tuna',           'elbow macaroni',
+      'black beans',    'flour',
+      'apple juice',    'chicken drumstick',
+      'beef patty',     'eggs',
+      'ranch dressing', 'rice',
+      'onion',          'diced tomato',
+      'powdered milk',  'mustard',
+      'pork bacon',     'lettuce',
+      'ground beef',    'corn meal',
+      'cucumber',       'ketchup'
+    ]
+  },
+  {
+    latitude: 38.95135804157581,
+    longitude: -77.0123928349029,
+    size: 'medium',
+    storeName: 'Avenue Supermarket',
+    storeAddress: '5010 1ST STREET NW',
+    uniqueProducts: 28,
+    products: [
+      'carrot',            'peanut butter',
+      'corn meal',         'chicken breast',
+      'eggs',              'apple juice',
+      'diced tomato',      'ketchup',
+      'cucumber',          'chicken drumstick',
+      'onion',             'coffee',
+      'rice',              'butter',
+      'flour',             'mustard',
+      'elbow macaroni',    'mayonnaise',
+      'lettuce',           'corn',
+      'water',             'black beans',
+      'mozzarella cheese', 'pork bacon',
+      'beef patty',        'green pepper',
+      'soy sauce',         'american cheese'
+    ]
+  },
+  {
+    latitude: 38.90546255831053,
+    longitude: -77.00727113699224,
+    size: 'small',
+    storeName: 'Streets Market',
+    storeAddress: '51 M STREET NE',
+    uniqueProducts: 27,
+    products: [
+      'apple juice',       'ranch dressing',
+      'corn',              'ketchup',
+      'diced tomato',      'chicken breast',
+      'eggs',              'peanut butter',
+      'elbow macaroni',    'pork bacon',
+      'mustard',           'powdered milk',
+      'carrot',            'american cheese',
+      'corn meal',         'flour',
+      'orange juice',      'green pepper',
+      'mozzarella cheese', 'butter',
+      'chicken drumstick', 'black beans',
+      'soy sauce',         'lettuce',
+      'ground beef',       'tuna',
+      'beef patty'
+    ]
+  },
+  {
+    latitude: 38.94572155159999,
+    longitude: -77.09575911175843,
+    size: 'large',
+    storeName: 'Wagshal’s Market',
+    storeAddress: '4845 MASSACHUSETTS AVENUE NW',
+    uniqueProducts: 25,
+    products: [
+      'spaghetti',         'american cheese',
+      'pork bacon',        'onion',
+      'ketchup',           'cucumber',
+      'rice',              'black beans',
+      'lettuce',           'eggs',
+      'diced tomato',      'elbow macaroni',
+      'ground beef',       'carrot',
+      'chicken drumstick', 'beef patty',
+      'corn meal',         'coffee',
+      'mustard',           'water',
+      'mayonnaise',        'powdered milk',
+      'mozzarella cheese', 'green pepper',
+      'ranch dressing'
+    ]
+  },
+  {
+    latitude: 38.893139781622146,
+    longitude: -76.94745719705952,
+    size: 'small',
+    storeName: 'Safeway',
+    storeAddress: '322 40TH STREET NE',
+    uniqueProducts: 27,
+    products: [
+      'peanut butter',     'carrot',
+      'elbow macaroni',    'mustard',
+      'ranch dressing',    'green pepper',
+      'black beans',       'coffee',
+      'corn',              'flour',
+      'powdered milk',     'chicken drumstick',
+      'chicken breast',    'eggs',
+      'american cheese',   'diced tomato',
+      'cucumber',          'mayonnaise',
+      'water',             'spaghetti',
+      'soy sauce',         'apple juice',
+      'ketchup',           'pork bacon',
+      'butter',            'orange juice',
+      'mozzarella cheese'
+    ]
+  },
+  {
+    latitude: 38.929308227973394,
+    longitude: -77.03298601467988,
+    size: 'medium',
+    storeName: 'Lidl',
+    storeAddress: '3100 14TH STREET NW, #116',
+    uniqueProducts: 31,
+    products: [
+      'pork bacon',        'black beans',
+      'carrot',            'orange juice',
+      'mozzarella cheese', 'onion',
+      'lettuce',           'mustard',
+      'beef patty',        'green pepper',
+      'corn meal',         'chicken breast',
+      'soy sauce',         'eggs',
+      'butter',            'coffee',
+      'apple juice',       'chicken drumstick',
+      'water',             'tuna',
+      'corn',              'ranch dressing',
+      'mayonnaise',        'american cheese',
+      'diced tomato',      'rice',
+      'flour',             'cucumber',
+      'elbow macaroni',    'spaghetti',
+      'peanut butter'
+    ]
+  },
+  {
+    latitude: 38.9066904312142,
+    longitude: -77.04836333526447,
+    size: 'small',
+    storeName: 'Streets Market',
+    storeAddress: '1255 22ND STREET NW',
+    uniqueProducts: 29,
+    products: [
+      'tuna',              'mozzarella cheese',
+      'ranch dressing',    'cucumber',
+      'rice',              'ground beef',
+      'onion',             'flour',
+      'elbow macaroni',    'diced tomato',
+      'corn meal',         'ketchup',
+      'eggs',              'soy sauce',
+      'mayonnaise',        'spaghetti',
+      'peanut butter',     'chicken breast',
+      'powdered milk',     'beef patty',
+      'chicken drumstick', 'green pepper',
+      'water',             'pork bacon',
+      'mustard',           'coffee',
+      'american cheese',   'corn',
+      'black beans'
+    ]
+  },
+  {
+    latitude: 38.85903221903567,
+    longitude: -76.96667322313847,
+    size: 'large',
+    storeName: 'Safeway',
+    storeAddress: '2845 ALABAMA AVENUE SE',
+    uniqueProducts: 28,
+    products: [
+      'tuna',           'butter',
+      'corn meal',      'green pepper',
+      'mustard',        'spaghetti',
+      'lettuce',        'ground beef',
+      'elbow macaroni', 'black beans',
+      'flour',          'apple juice',
+      'ranch dressing', 'eggs',
+      'cucumber',       'corn',
+      'carrot',         'peanut butter',
+      'mayonnaise',     'powdered milk',
+      'diced tomato',   'american cheese',
+      'onion',          'chicken drumstick',
+      'pork bacon',     'mozzarella cheese',
+      'chicken breast', 'ketchup'
+    ]
+  },
+  {
+    latitude: 38.9655532402862,
+    longitude: -77.0764593007974,
+    size: 'medium',
+    storeName: "Magruder's",
+    storeAddress: '5626 CONNECTICUT AVENUE NW',
+    uniqueProducts: 29,
+    products: [
+      'ranch dressing',    'onion',
+      'soy sauce',         'apple juice',
+      'ketchup',           'peanut butter',
+      'mozzarella cheese', 'tuna',
+      'corn meal',         'spaghetti',
+      'butter',            'corn',
+      'american cheese',   'rice',
+      'beef patty',        'mayonnaise',
+      'chicken breast',    'pork bacon',
+      'diced tomato',      'black beans',
+      'orange juice',      'mustard',
+      'flour',             'chicken drumstick',
+      'green pepper',      'ground beef',
+      'lettuce',           'cucumber',
+      'carrot'
+    ]
+  },
+  {
+    latitude: 38.969528402684396,
+    longitude: -77.02655061039647,
+    size: 'large',
+    storeName: 'Safeway',
+    storeAddress: '6500 PINEY BRANCH ROAD NW',
+    uniqueProducts: 29,
+    products: [
+      'cucumber',          'peanut butter',
+      'tuna',              'mayonnaise',
+      'chicken drumstick', 'pork bacon',
+      'chicken breast',    'soy sauce',
+      'onion',             'coffee',
+      'eggs',              'spaghetti',
+      'corn',              'carrot',
+      'lettuce',           'black beans',
+      'ranch dressing',    'ketchup',
+      'corn meal',         'water',
+      'flour',             'mustard',
+      'powdered milk',     'orange juice',
+      'mozzarella cheese', 'rice',
+      'diced tomato',      'american cheese',
+      'green pepper'
+    ]
+  },
+  {
+    latitude: 38.90746786181079,
+    longitude: -77.00056757058081,
+    size: 'medium',
+    storeName: "Trader Joe's",
+    storeAddress: '350 FLORIDA AVENUE NE',
+    uniqueProducts: 30,
+    products: [
+      'corn meal',         'pork bacon',
+      'corn',              'coffee',
+      'apple juice',       'orange juice',
+      'chicken breast',    'diced tomato',
+      'ranch dressing',    'cucumber',
+      'elbow macaroni',    'spaghetti',
+      'carrot',            'onion',
+      'rice',              'mayonnaise',
+      'black beans',       'peanut butter',
+      'water',             'american cheese',
+      'ketchup',           'green pepper',
+      'mozzarella cheese', 'soy sauce',
+      'tuna',              'ground beef',
+      'powdered milk',     'butter',
+      'mustard',           'flour'
+    ]
+  },
+  {
+    latitude: 38.930102183481345,
+    longitude: -77.03814039244843,
+    size: 'medium',
+    storeName: 'Streets Market',
+    storeAddress: '3146 MOUNT PLEASANT STREET NW',
+    uniqueProducts: 26,
+    products: [
+      'ranch dressing',    'green pepper',
+      'soy sauce',         'ground beef',
+      'cucumber',          'powdered milk',
+      'carrot',            'tuna',
+      'chicken breast',    'american cheese',
+      'pork bacon',        'water',
+      'apple juice',       'onion',
+      'lettuce',           'diced tomato',
+      'chicken drumstick', 'orange juice',
+      'mozzarella cheese', 'corn meal',
+      'spaghetti',         'peanut butter',
+      'eggs',              'flour',
+      'mustard',           'rice'
+    ]
+  },
+  {
+    latitude: 38.92075605615908,
+    longitude: -77.04354207691901,
+    size: 'medium',
+    storeName: 'Streets Market',
+    storeAddress: '1864 COLUMBIA ROAD NW',
+    uniqueProducts: 24,
+    products: [
+      'ground beef',    'carrot',
+      'powdered milk',  'ketchup',
+      'water',          'orange juice',
+      'green pepper',   'diced tomato',
+      'soy sauce',      'chicken drumstick',
+      'tuna',           'peanut butter',
+      'pork bacon',     'cucumber',
+      'rice',           'eggs',
+      'lettuce',        'ranch dressing',
+      'chicken breast', 'onion',
+      'spaghetti',      'corn meal',
+      'corn',           'apple juice'
+    ]
+  },
+  {
+    latitude: 38.84494948017701,
+    longitude: -76.98099933099753,
+    size: 'small',
+    storeName: 'Giant',
+    storeAddress: '1535 ALABAMA AVENUE SE',
+    uniqueProducts: 29,
+    products: [
+      'spaghetti',         'corn',
+      'chicken drumstick', 'powdered milk',
+      'diced tomato',      'beef patty',
+      'corn meal',         'coffee',
+      'american cheese',   'peanut butter',
+      'ground beef',       'elbow macaroni',
+      'green pepper',      'carrot',
+      'soy sauce',         'ranch dressing',
+      'ketchup',           'water',
+      'chicken breast',    'pork bacon',
+      'lettuce',           'mayonnaise',
+      'mozzarella cheese', 'rice',
+      'mustard',           'butter',
+      'eggs',              'apple juice',
+      'flour'
+    ]
+  },
+  {
+    latitude: 38.95234016155874,
+    longitude: -77.08246449753963,
+    size: 'medium',
+    storeName: 'Safeway',
+    storeAddress: '4203 DAVENPORT STREET NW',
+    uniqueProducts: 20,
+    products: [
+      'chicken drumstick', 'tuna',
+      'corn meal',         'peanut butter',
+      'water',             'powdered milk',
+      'cucumber',          'mayonnaise',
+      'apple juice',       'onion',
+      'black beans',       'coffee',
+      'american cheese',   'mozzarella cheese',
+      'carrot',            'rice',
+      'pork bacon',        'ground beef',
+      'lettuce',           'ranch dressing'
+    ]
+  },
+  {
+    latitude: 38.8828727388499,
+    longitude: -76.9947534873476,
+    size: 'small',
+    storeName: 'Union Kitchen Grocery',
+    storeAddress: '430 8TH STREET SE',
+    uniqueProducts: 22,
+    products: [
+      'chicken drumstick', 'coffee',
+      'powdered milk',     'mayonnaise',
+      'soy sauce',         'apple juice',
+      'ground beef',       'eggs',
+      'black beans',       'chicken breast',
+      'green pepper',      'ketchup',
+      'american cheese',   'elbow macaroni',
+      'onion',             'beef patty',
+      'corn meal',         'mozzarella cheese',
+      'tuna',              'rice',
+      'spaghetti',         'flour'
+    ]
+  },
+  {
+    latitude: 38.88028537177093,
+    longitude: -77.00471301493634,
+    size: 'small',
+    storeName: 'Whole Foods Market',
+    storeAddress: '101 H STREET SE',
+    uniqueProducts: 29,
+    products: [
+      'cucumber',          'ground beef',
+      'beef patty',        'mustard',
+      'chicken drumstick', 'flour',
+      'chicken breast',    'soy sauce',
+      'elbow macaroni',    'powdered milk',
+      'pork bacon',        'ranch dressing',
+      'american cheese',   'spaghetti',
+      'lettuce',           'mayonnaise',
+      'carrot',            'rice',
+      'corn',              'green pepper',
+      'corn meal',         'diced tomato',
+      'peanut butter',     'orange juice',
+      'ketchup',           'mozzarella cheese',
+      'apple juice',       'eggs',
+      'black beans'
+    ]
+  },
+  {
+    latitude: 38.91850672736017,
+    longitude: -77.03161975008753,
+    size: 'medium',
+    storeName: 'Yes! Organic',
+    storeAddress: '2123 14TH STREET NW',
+    uniqueProducts: 27,
+    products: [
+      'eggs',              'elbow macaroni',
+      'mayonnaise',        'lettuce',
+      'orange juice',      'cucumber',
+      'butter',            'ranch dressing',
+      'black beans',       'ketchup',
+      'chicken drumstick', 'american cheese',
+      'green pepper',      'pork bacon',
+      'tuna',              'apple juice',
+      'onion',             'water',
+      'diced tomato',      'ground beef',
+      'mustard',           'beef patty',
+      'coffee',            'soy sauce',
+      'chicken breast',    'flour',
+      'carrot'
+    ]
+  },
+  {
+    latitude: 38.877621504691085,
+    longitude: -77.0171618053436,
+    size: 'medium',
+    storeName: 'Safeway',
+    storeAddress: '1100 4TH STREET SW',
+    uniqueProducts: 27,
+    products: [
+      'rice',              'black beans',
+      'mustard',           'onion',
+      'carrot',            'butter',
+      'peanut butter',     'orange juice',
+      'mozzarella cheese', 'flour',
+      'apple juice',       'lettuce',
+      'ground beef',       'cucumber',
+      'ranch dressing',    'tuna',
+      'corn meal',         'diced tomato',
+      'corn',              'water',
+      'chicken drumstick', 'elbow macaroni',
+      'coffee',            'powdered milk',
+      'spaghetti',         'beef patty',
+      'eggs'
+    ]
+  },
+  {
+    latitude: 38.919229805772105,
+    longitude: -76.9924309344828,
+    size: 'large',
+    storeName: 'Giant',
+    storeAddress: '1050 BRENTWOOD ROAD NE',
+    uniqueProducts: 26,
+    products: [
+      'butter',            'rice',
+      'coffee',            'water',
+      'cucumber',          'corn meal',
+      'lettuce',           'ketchup',
+      'elbow macaroni',    'spaghetti',
+      'mozzarella cheese', 'green pepper',
+      'flour',             'tuna',
+      'corn',              'mustard',
+      'chicken drumstick', 'eggs',
+      'black beans',       'pork bacon',
+      'carrot',            'mayonnaise',
+      'peanut butter',     'onion',
+      'powdered milk',     'ranch dressing'
+    ]
+  },
+  {
+    latitude: 38.83120451966467,
+    longitude: -77.00808213858393,
+    size: 'medium',
+    storeName: 'Good Food Markets',
+    storeAddress: '4001 SOUTH CAPITOL STREET SW',
+    uniqueProducts: 30,
+    products: [
+      'ketchup',           'butter',
+      'apple juice',       'american cheese',
+      'ranch dressing',    'peanut butter',
+      'rice',              'corn meal',
+      'flour',             'beef patty',
+      'black beans',       'mozzarella cheese',
+      'spaghetti',         'elbow macaroni',
+      'water',             'green pepper',
+      'mayonnaise',        'corn',
+      'cucumber',          'powdered milk',
+      'carrot',            'lettuce',
+      'eggs',              'mustard',
+      'coffee',            'onion',
+      'ground beef',       'orange juice',
+      'chicken drumstick', 'chicken breast'
+    ]
+  },
+  {
+    latitude: 38.87413333646309,
+    longitude: -76.97274786739935,
+    size: 'small',
+    storeName: 'Yes! Organic',
+    storeAddress: '2323 PENNSYLVANIA AVENUE SE',
+    uniqueProducts: 22,
+    products: [
+      'tuna',              'ground beef',
+      'coffee',            'spaghetti',
+      'american cheese',   'pork bacon',
+      'powdered milk',     'ranch dressing',
+      'mozzarella cheese', 'soy sauce',
+      'beef patty',        'lettuce',
+      'ketchup',           'butter',
+      'eggs',              'green pepper',
+      'cucumber',          'flour',
+      'mustard',           'chicken drumstick',
+      'water',             'diced tomato'
+    ]
+  },
+  {
+    latitude: 38.95453573534579,
+    longitude: -76.9997257446131,
+    size: 'medium',
+    storeName: 'Aldi',
+    storeAddress: '5300 SOUTH DAKOTA AVENUE NE',
+    uniqueProducts: 25,
+    products: [
+      'chicken drumstick', 'black beans',
+      'corn meal',         'water',
+      'flour',             'rice',
+      'green pepper',      'corn',
+      'chicken breast',    'elbow macaroni',
+      'cucumber',          'soy sauce',
+      'onion',             'tuna',
+      'mustard',           'powdered milk',
+      'butter',            'lettuce',
+      'ketchup',           'ranch dressing',
+      'diced tomato',      'pork bacon',
+      'mozzarella cheese', 'peanut butter',
+      'beef patty'
+    ]
+  },
+  {
+    latitude: 38.962078321939025,
+    longitude: -77.0272851396928,
+    size: 'medium',
+    storeName: 'Walmart Supercenter',
+    storeAddress: '5929 GEORGIA AVENUE NW',
+    uniqueProducts: 27,
+    products: [
+      'chicken drumstick', 'peanut butter',
+      'diced tomato',      'chicken breast',
+      'corn meal',         'mustard',
+      'soy sauce',         'green pepper',
+      'butter',            'lettuce',
+      'black beans',       'onion',
+      'flour',             'ranch dressing',
+      'beef patty',        'ketchup',
+      'carrot',            'corn',
+      'pork bacon',        'mayonnaise',
+      'rice',              'orange juice',
+      'water',             'eggs',
+      'coffee',            'tuna',
+      'spaghetti'
+    ]
+  },
+  {
+    latitude: 38.90679819583192,
+    longitude: -77.0266923576239,
+    size: 'medium',
+    storeName: 'Capitol Super Market',
+    storeAddress: '1231 11TH STREET NW',
+    uniqueProducts: 28,
+    products: [
+      'coffee',            'peanut butter',
+      'soy sauce',         'lettuce',
+      'rice',              'corn meal',
+      'cucumber',          'water',
+      'american cheese',   'orange juice',
+      'mozzarella cheese', 'apple juice',
+      'powdered milk',     'pork bacon',
+      'onion',             'butter',
+      'chicken drumstick', 'elbow macaroni',
+      'green pepper',      'mayonnaise',
+      'corn',              'carrot',
+      'beef patty',        'tuna',
+      'mustard',           'ketchup',
+      'ranch dressing',    'ground beef'
+    ]
+  },
+  {
+    latitude: 38.95660425176426,
+    longitude: -77.02131788768959,
+    size: 'small',
+    storeName: 'Tropimart International Foods',
+    storeAddress: '607 KENNEDY STREET NW',
+    uniqueProducts: 29,
+    products: [
+      'rice',              'pork bacon',
+      'mozzarella cheese', 'ranch dressing',
+      'peanut butter',     'corn',
+      'tuna',              'orange juice',
+      'mustard',           'spaghetti',
+      'corn meal',         'water',
+      'eggs',              'beef patty',
+      'black beans',       'soy sauce',
+      'chicken drumstick', 'elbow macaroni',
+      'carrot',            'ketchup',
+      'green pepper',      'onion',
+      'mayonnaise',        'flour',
+      'lettuce',           'chicken breast',
+      'diced tomato',      'coffee',
+      'butter'
+    ]
+  },
+  {
+    latitude: 38.93094342714376,
+    longitude: -77.03854438909195,
+    size: 'large',
+    storeName: 'BestWorld Supermarket',
+    storeAddress: '3178 MOUNT PLEASANT STREET NW',
+    uniqueProducts: 24,
+    products: [
+      'spaghetti',       'carrot',
+      'apple juice',     'beef patty',
+      'peanut butter',   'diced tomato',
+      'soy sauce',       'water',
+      'black beans',     'pork bacon',
+      'mayonnaise',      'orange juice',
+      'chicken breast',  'mozzarella cheese',
+      'american cheese', 'coffee',
+      'corn',            'onion',
+      'lettuce',         'butter',
+      'ranch dressing',  'cucumber',
+      'rice',            'eggs'
+    ]
+  },
+  {
+    latitude: 38.91428483131307,
+    longitude: -77.0452000177074,
+    size: 'large',
+    storeName: "Dawson's Market",
+    storeAddress: '2001 S STREET NW',
+    uniqueProducts: 29,
+    products: [
+      'eggs',            'black beans',
+      'american cheese', 'rice',
+      'soy sauce',       'green pepper',
+      'ground beef',     'corn',
+      'chicken breast',  'diced tomato',
+      'ketchup',         'cucumber',
+      'onion',           'pork bacon',
+      'beef patty',      'elbow macaroni',
+      'peanut butter',   'mozzarella cheese',
+      'mustard',         'water',
+      'tuna',            'coffee',
+      'corn meal',       'carrot',
+      'mayonnaise',      'lettuce',
+      'apple juice',     'chicken drumstick',
+      'spaghetti'
+    ]
+  },
+  {
+    latitude: 38.9218044722116,
+    longitude: -77.04371096490623,
+    size: 'medium',
+    storeName: 'Yes! Organic',
+    storeAddress: '1825 COLUMBIA ROAD NW',
+    uniqueProducts: 28,
+    products: [
+      'carrot',            'diced tomato',
+      'rice',              'butter',
+      'green pepper',      'apple juice',
+      'onion',             'chicken breast',
+      'water',             'coffee',
+      'chicken drumstick', 'mayonnaise',
+      'ranch dressing',    'ground beef',
+      'corn meal',         'peanut butter',
+      'flour',             'corn',
+      'elbow macaroni',    'black beans',
+      'beef patty',        'pork bacon',
+      'spaghetti',         'lettuce',
+      'orange juice',      'mustard',
+      'cucumber',          'powdered milk'
+    ]
+  },
+  {
+    latitude: 38.93435149372009,
+    longitude: -77.07299916212477,
+    size: 'small',
+    storeName: 'Giant',
+    storeAddress: '3336 WISCONSIN AVENUE NW',
+    uniqueProducts: 28,
+    products: [
+      'american cheese',   'spaghetti',
+      'lettuce',           'beef patty',
+      'water',             'butter',
+      'tuna',              'orange juice',
+      'powdered milk',     'rice',
+      'mozzarella cheese', 'coffee',
+      'green pepper',      'onion',
+      'corn meal',         'corn',
+      'chicken breast',    'elbow macaroni',
+      'pork bacon',        'ranch dressing',
+      'chicken drumstick', 'black beans',
+      'ketchup',           'mustard',
+      'soy sauce',         'ground beef',
+      'peanut butter',     'diced tomato'
+    ]
+  },
+  {
+    latitude: 38.935242769363896,
+    longitude: -77.0578868641251,
+    size: 'large',
+    storeName: 'Streets Market',
+    storeAddress: '3427 CONNECTICUT AVENUE NW',
+    uniqueProducts: 24,
+    products: [
+      'butter',         'flour',
+      'chicken breast', 'mustard',
+      'diced tomato',   'beef patty',
+      'powdered milk',  'orange juice',
+      'soy sauce',      'black beans',
+      'pork bacon',     'carrot',
+      'green pepper',   'water',
+      'corn meal',      'cucumber',
+      'eggs',           'peanut butter',
+      'ground beef',    'onion',
+      'lettuce',        'apple juice',
+      'spaghetti',      'chicken drumstick'
+    ]
+  },
+  {
+    latitude: 38.921847780356295,
+    longitude: -76.99990690595715,
+    size: 'medium',
+    storeName: 'Save-A-Lot',
+    storeAddress: '514 RHODE ISLAND AVENUE NE',
+    uniqueProducts: 25,
+    products: [
+      'chicken breast',    'diced tomato',
+      'onion',             'elbow macaroni',
+      'soy sauce',         'lettuce',
+      'beef patty',        'cucumber',
+      'butter',            'corn',
+      'orange juice',      'ketchup',
+      'mayonnaise',        'black beans',
+      'green pepper',      'mozzarella cheese',
+      'chicken drumstick', 'ground beef',
+      'mustard',           'american cheese',
+      'pork bacon',        'eggs',
+      'tuna',              'spaghetti',
+      'apple juice'
+    ]
+  },
+  {
+    latitude: 38.90953496387368,
+    longitude: -77.0553401792372,
+    size: 'medium',
+    storeName: 'Streets Market',
+    storeAddress: '2617 P STREET NW',
+    uniqueProducts: 25,
+    products: [
+      'ground beef',     'mayonnaise',
+      'apple juice',     'onion',
+      'ketchup',         'carrot',
+      'cucumber',        'powdered milk',
+      'eggs',            'corn',
+      'corn meal',       'flour',
+      'orange juice',    'rice',
+      'green pepper',    'elbow macaroni',
+      'diced tomato',    'butter',
+      'pork bacon',      'chicken breast',
+      'american cheese', 'black beans',
+      'beef patty',      'spaghetti',
+      'mustard'
+    ]
+  },
+  {
+    latitude: 38.92421518348709,
+    longitude: -77.04099386279991,
+    size: 'small',
+    storeName: 'Safeway',
+    storeAddress: '1747 COLUMBIA ROAD NW',
+    uniqueProducts: 24,
+    products: [
+      'chicken breast', 'flour',
+      'black beans',    'butter',
+      'eggs',           'corn',
+      'peanut butter',  'ranch dressing',
+      'coffee',         'carrot',
+      'soy sauce',      'water',
+      'pork bacon',     'powdered milk',
+      'onion',          'mozzarella cheese',
+      'cucumber',       'chicken drumstick',
+      'ground beef',    'american cheese',
+      'corn meal',      'rice',
+      'lettuce',        'spaghetti'
+    ]
+  },
+  {
+    latitude: 38.936824244908216,
+    longitude: -76.990397442066,
+    size: 'medium',
+    storeName: 'Yes! Organic',
+    storeAddress: '3809 12TH STREET NE',
+    uniqueProducts: 21,
+    products: [
+      'rice',              'corn',
+      'beef patty',        'chicken drumstick',
+      'corn meal',         'elbow macaroni',
+      'powdered milk',     'ground beef',
+      'flour',             'carrot',
+      'soy sauce',         'american cheese',
+      'mozzarella cheese', 'tuna',
+      'pork bacon',        'spaghetti',
+      'chicken breast',    'butter',
+      'water',             'mustard',
+      'eggs'
+    ]
+  },
+  {
+    latitude: 38.98445529888658,
+    longitude: -77.0269805790129,
+    size: 'large',
+    storeName: 'Target',
+    storeAddress: '7828 GEORGIA AVENUE NW',
+    uniqueProducts: 23,
+    products: [
+      'corn',              'black beans',
+      'mustard',           'water',
+      'ground beef',       'mayonnaise',
+      'pork bacon',        'peanut butter',
+      'apple juice',       'american cheese',
+      'diced tomato',      'soy sauce',
+      'elbow macaroni',    'cucumber',
+      'lettuce',           'butter',
+      'ranch dressing',    'carrot',
+      'mozzarella cheese', 'rice',
+      'tuna',              'spaghetti',
+      'orange juice'
+    ]
+  },
+  {
+    latitude: 38.91595166823909,
+    longitude: -76.98359318635839,
+    size: 'small',
+    storeName: "Mom's Organic Market",
+    storeAddress: '1501 NEW YORK AVENUE NE',
+    uniqueProducts: 25,
+    products: [
+      'mustard',           'corn meal',
+      'green pepper',      'orange juice',
+      'water',             'american cheese',
+      'black beans',       'eggs',
+      'chicken breast',    'soy sauce',
+      'diced tomato',      'spaghetti',
+      'pork bacon',        'apple juice',
+      'mayonnaise',        'elbow macaroni',
+      'flour',             'cucumber',
+      'mozzarella cheese', 'tuna',
+      'ground beef',       'onion',
+      'corn',              'carrot',
+      'ketchup'
+    ]
+  },
+  {
+    latitude: 38.9004378222694,
+    longitude: -77.00164702126357,
+    size: 'medium',
+    storeName: 'Giant',
+    storeAddress: '300 H STREET NE',
+    uniqueProducts: 29,
+    products: [
+      'cucumber',          'butter',
+      'orange juice',      'beef patty',
+      'mustard',           'peanut butter',
+      'black beans',       'eggs',
+      'flour',             'diced tomato',
+      'ketchup',           'pork bacon',
+      'chicken breast',    'soy sauce',
+      'mayonnaise',        'apple juice',
+      'carrot',            'lettuce',
+      'rice',              'powdered milk',
+      'spaghetti',         'corn meal',
+      'mozzarella cheese', 'ranch dressing',
+      'american cheese',   'water',
+      'ground beef',       'elbow macaroni',
+      'chicken drumstick'
+    ]
+  },
+  {
+    latitude: 38.949108887229904,
+    longitude: -77.07921470836415,
+    size: 'small',
+    storeName: 'Whole Foods Market',
+    storeAddress: '4530 40TH STREET NW',
+    uniqueProducts: 26,
+    products: [
+      'peanut butter',   'chicken breast',
+      'diced tomato',    'pork bacon',
+      'corn meal',       'powdered milk',
+      'ranch dressing',  'orange juice',
+      'corn',            'rice',
+      'apple juice',     'ketchup',
+      'soy sauce',       'green pepper',
+      'spaghetti',       'chicken drumstick',
+      'flour',           'cucumber',
+      'coffee',          'elbow macaroni',
+      'american cheese', 'mustard',
+      'beef patty',      'onion',
+      'mayonnaise',      'water'
+    ]
+  },
+  {
+    latitude: 38.86176558894161,
+    longitude: -76.96740108339792,
+    size: 'large',
+    storeName: 'Lidl',
+    storeAddress: '2224 TOWN CENTER DRIVE SE',
+    uniqueProducts: 23,
+    products: [
+      'peanut butter',     'rice',
+      'carrot',            'powdered milk',
+      'mustard',           'corn meal',
+      'chicken breast',    'lettuce',
+      'flour',             'tuna',
+      'elbow macaroni',    'soy sauce',
+      'chicken drumstick', 'ketchup',
+      'spaghetti',         'corn',
+      'coffee',            'apple juice',
+      'onion',             'ground beef',
+      'black beans',       'beef patty',
+      'mozzarella cheese'
+    ]
+  },
+  {
+    latitude: 38.896534304119626,
+    longitude: -77.05114371697834,
+    size: 'small',
+    storeName: 'Market at Columbia Plaza',
+    storeAddress: '516 23RD STREET NW',
+    uniqueProducts: 27,
+    products: [
+      'ranch dressing',  'pork bacon',
+      'carrot',          'beef patty',
+      'american cheese', 'cucumber',
+      'tuna',            'mayonnaise',
+      'green pepper',    'chicken breast',
+      'peanut butter',   'flour',
+      'water',           'coffee',
+      'apple juice',     'soy sauce',
+      'eggs',            'ketchup',
+      'rice',            'mustard',
+      'onion',           'elbow macaroni',
+      'diced tomato',    'lettuce',
+      'orange juice',    'black beans',
+      'butter'
+    ]
+  },
+  {
+    latitude: 38.93589900198146,
+    longitude: -77.03308350447402,
+    size: 'medium',
+    storeName: 'Panam Grocery',
+    storeAddress: '3552 14TH STREET NW',
+    uniqueProducts: 29,
+    products: [
+      'coffee',            'mustard',
+      'spaghetti',         'cucumber',
+      'elbow macaroni',    'peanut butter',
+      'orange juice',      'green pepper',
+      'powdered milk',     'black beans',
+      'beef patty',        'diced tomato',
+      'corn',              'ranch dressing',
+      'water',             'mayonnaise',
+      'chicken drumstick', 'rice',
+      'tuna',              'pork bacon',
+      'flour',             'lettuce',
+      'corn meal',         'mozzarella cheese',
+      'american cheese',   'onion',
+      'chicken breast',    'soy sauce',
+      'ground beef'
+    ]
+  },
+  {
+    latitude: 38.904198954892756,
+    longitude: -77.05301445799769,
+    size: 'medium',
+    storeName: "Trader Joe's",
+    storeAddress: '1101 25TH STREET NW',
+    uniqueProducts: 23,
+    products: [
+      'flour',             'apple juice',
+      'elbow macaroni',    'diced tomato',
+      'powdered milk',     'ranch dressing',
+      'american cheese',   'lettuce',
+      'ground beef',       'onion',
+      'corn',              'cucumber',
+      'chicken breast',    'carrot',
+      'pork bacon',        'peanut butter',
+      'tuna',              'mustard',
+      'chicken drumstick', 'butter',
+      'water',             'corn meal',
+      'black beans'
+    ]
+  },
+  {
+    latitude: 38.883390266617674,
+    longitude: -76.99466355031815,
+    size: 'small',
+    storeName: 'Yes! Organic',
+    storeAddress: '410 8TH STREET SE',
+    uniqueProducts: 26,
+    products: [
+      'coffee',            'rice',
+      'orange juice',      'elbow macaroni',
+      'corn meal',         'onion',
+      'mayonnaise',        'american cheese',
+      'eggs',              'lettuce',
+      'flour',             'ranch dressing',
+      'powdered milk',     'green pepper',
+      'chicken drumstick', 'water',
+      'peanut butter',     'carrot',
+      'chicken breast',    'ground beef',
+      'beef patty',        'pork bacon',
+      'mustard',           'tuna',
+      'soy sauce',         'cucumber'
+    ]
+  }
+]
+Total unique stores: 93
+El Progreso Market: 27 unique products
+Harris Teeter: 24 unique products
+Walmart Supercenter: 26 unique products
+Giant: 31 unique products
+Harris Teeter: 30 unique products
+Safeway: 27 unique products
+Streets Market: 23 unique products
+Union Kitchen Grocery: 29 unique products
+Target: 28 unique products
+Trader Joe's: 30 unique products
+Union Kitchen Grocery: 26 unique products
+Safeway: 22 unique products
+Rodman’s: 28 unique products
+Trader Joe's: 29 unique products
+Trader Joe's: 26 unique products
+Trader Joe's: 26 unique products
+Metro Supermarket: 25 unique products
+Safeway: 24 unique products
+Morazan Grocery Store: 27 unique products
+Good Food Markets: 28 unique products
+Jocelyn’s Market: 25 unique products
+Target: 27 unique products
+Safeway: 28 unique products
+International Progresso Market: 27 unique products
+Costco Wholesale: 26 unique products
+Giant: 27 unique products
+Whole Foods Market: 26 unique products
+Yes! Organic: 29 unique products
+Whole Foods Market: 26 unique products
+Whole Foods Market: 27 unique products
+Safeway: 27 unique products
+Whole Foods Market: 24 unique products
+Streets Market: 28 unique products
+Walmart Supercenter: 24 unique products
+Dean & DeLuca: 28 unique products
+Aldi: 26 unique products
+AmazonFresh: 28 unique products
+Yes! Organic: 28 unique products
+Wegmans: 27 unique products
+Harris Teeter: 28 unique products
+Target: 27 unique products
+Harris Teeter: 26 unique products
+Target: 28 unique products
+Giant: 24 unique products
+Safeway: 30 unique products
+Whole Foods Market: 30 unique products
+Union Kitchen Grocery: 27 unique products
+Whole Foods Market: 24 unique products
+Safeway: 25 unique products
+Safeway: 30 unique products
+Avenue Supermarket: 28 unique products
+Streets Market: 27 unique products
+Wagshal’s Market: 25 unique products
+Safeway: 27 unique products
+Lidl: 31 unique products
+Streets Market: 29 unique products
+Safeway: 28 unique products
+Magruder's: 29 unique products
+Safeway: 29 unique products
+Trader Joe's: 30 unique products
+Streets Market: 26 unique products
+Streets Market: 24 unique products
+Giant: 29 unique products
+Safeway: 20 unique products
+Union Kitchen Grocery: 22 unique products
+Whole Foods Market: 29 unique products
+Yes! Organic: 27 unique products
+Safeway: 27 unique products
+Giant: 26 unique products
+Good Food Markets: 30 unique products
+Yes! Organic: 22 unique products
+Aldi: 25 unique products
+Walmart Supercenter: 27 unique products
+Capitol Super Market: 28 unique products
+Tropimart International Foods: 29 unique products
+BestWorld Supermarket: 24 unique products
+Dawson's Market: 29 unique products
+Yes! Organic: 28 unique products
+Giant: 28 unique products
+Streets Market: 24 unique products
+Save-A-Lot: 25 unique products
+Streets Market: 25 unique products
+Safeway: 24 unique products
+Yes! Organic: 21 unique products
+Target: 23 unique products
+Mom's Organic Market: 25 unique products
+Giant: 29 unique products
+Whole Foods Market: 26 unique products
+Lidl: 23 unique products
+Market at Columbia Plaza: 27 unique products
+Panam Grocery: 29 unique products
+Trader Joe's: 23 unique products
+Yes! Organic: 26 unique products
+✅ Total stores: 93
+Product count range: 20 - 31
+
+Top 10 stores:
+1. Giant                               31 products
+2. Lidl                                31 products
+3. Harris Teeter                       30 products
+4. Trader Joe's                        30 products
+5. Safeway                             30 products
+6. Whole Foods Market                  30 products
+7. Safeway                             30 products
+8. Trader Joe's                        30 products
+9. Good Food Markets                   30 products
+10. Union Kitchen Grocery               29 products
