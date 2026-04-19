@@ -3,6 +3,7 @@ import mapboxgl from 'https://cdn.jsdelivr.net/npm/mapbox-gl@2.15.0/+esm';
 
 // Check that Mapbox GL JS is loaded
 console.log('Mapbox GL JS Loaded:', mapboxgl);
+console.log('Mapbox version:', mapboxgl.version);
 
 // Set your Mapbox access token here
 mapboxgl.accessToken = 'pk.eyJ1IjoidmFsYXUiLCJhIjoiY21vNTlvenR0MWVlejJwcHNyaDQyMWk1dyJ9._Z2m36NY-HnfdP_mGii0Sg';
@@ -11,6 +12,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidmFsYXUiLCJhIjoiY21vNTlvenR0MWVlejJwcHNyaDQyM
 console.log('Page hostname:', window.location.hostname);
 console.log('Page protocol:', window.location.protocol);
 console.log('Full URL:', window.location.href);
+console.log('Mapbox Token Set:', mapboxgl.accessToken ? 'Yes' : 'No');
 
 // Fixed restaurant coordinates at real grocery store areas in Washington DC
 const restaurants = {
@@ -36,41 +38,54 @@ function createCircleGeoJSON(centerLngLat, radiusMiles) {
 
 // Wait for DOM to be fully loaded before initializing map
 function initMap() {
-  const mapContainer = document.getElementById('map');
-  
-  if (!mapContainer) {
-    console.error('Map container not found!');
-    return;
-  }
-  
-  console.log('Map container found, initializing map...');
-  
-  // Initialize the map
-  const map = new mapboxgl.Map({
-    container: 'map', // ID of the div where the map will render
-    style: 'mapbox://styles/mapbox/streets-v12', // Map style
-    center: [-77.0369, 38.9072], // [longitude, latitude] - Washington DC
-    zoom: 12, // Initial zoom level
-    minZoom: 5, // Minimum allowed zoom
-    maxZoom: 18, // Maximum allowed zoom
-    attributionControl: true,
-    customAttribution: 'Map data © Mapbox'
-  });
-  
-  // Log map events for debugging
-  map.on('load', () => {
-    console.log('Map loaded successfully!');
-  });
-  
-  map.on('error', (e) => {
-    console.error('Map error:', e);
-  });
-  
-  // Optional: Add zoom and rotation controls
-  map.addControl(new mapboxgl.NavigationControl());
+  try {
+    const mapContainer = document.getElementById('map');
+    
+    if (!mapContainer) {
+      console.error('❌ Map container not found!');
+      console.error('Looking for element with id="map"');
+      return;
+    }
+    
+    console.log('✅ Map container found');
+    console.log('Container dimensions:', mapContainer.offsetWidth, 'x', mapContainer.offsetHeight);
+    
+    // Initialize the map
+    const map = new mapboxgl.Map({
+      container: 'map', // ID of the div where the map will render
+      style: 'mapbox://styles/mapbox/streets-v12', // Map style
+      center: [-77.0369, 38.9072], // [longitude, latitude] - Washington DC
+      zoom: 12, // Initial zoom level
+      minZoom: 5, // Minimum allowed zoom
+      maxZoom: 18, // Maximum allowed zoom
+      attributionControl: true,
+      customAttribution: 'Map data © Mapbox',
+      failIfMajorPerformanceCaveat: false // Allow map to load even with performance issues
+    });
+    
+    // Log map events for debugging
+    map.on('load', () => {
+      console.log('✅ Map loaded successfully!');
+      console.log('Map center:', map.getCenter());
+      console.log('Map zoom:', map.getZoom());
+    });
+    
+    map.on('error', (e) => {
+      console.error('❌ Map error:', e);
+      console.error('Error message:', e.message);
+      console.error('Error object:', e);
+    });
+    
+    map.on('style.load', () => {
+      console.log('✅ Map style loaded');
+    });
+    
+    // Optional: Add zoom and rotation controls
+    map.addControl(new mapboxgl.NavigationControl());
+    console.log('✅ Navigation control added');
 
-  // Create markers for each restaurant (but don't add to map yet)
-  const markers = {};
+    // Create markers for each restaurant (but don't add to map yet)
+    const markers = {};
 
   Object.entries(restaurants).forEach(([restaurantId, coords]) => {
     // Create a custom marker element
@@ -216,6 +231,11 @@ function initMap() {
         updateRadiusCircle(coords, radiusValue);
       }
     });
+  }
+  } catch (error) {
+    console.error('❌ Error initializing map:', error);
+    console.error('Error details:', error.message);
+    console.error('Error stack:', error.stack);
   }
 }
 
