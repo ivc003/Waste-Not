@@ -8,100 +8,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation Banner -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-brand-section">
-        <a href="landing.html" class="navbar-brand">Waste Not</a>
-        <span class="navbar-subtitle">Combatting Climate Change and Connecting Needs</span>
-      </div>
-      <ul class="navbar-menu">
-        <li><a href="why-this-matters.html">Why This Matters</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <h1 id="mainTitle" class="title">Fires within the United States by Min. Brightness</h1>
-  <div id="timeSubtitle" class="subtitle">Time Frame Currently Displaying: November 2024 to October 2025</div>
-  <div id="statesSubtitle" class="subtitle">States: all states</div>
-  <!-- Collapsible season dropdown -->
-  <div class="dropdown" id="seasonDropdown">
-    <button class="dropdown-toggle" aria-expanded="false" aria-controls="seasonPanel">Seasons <span class="caret">▾</span></button>
-    <div class="dropdown-panel" id="seasonPanel" hidden>
-      <label><input type="checkbox" class="season" value="Winter" checked> Winter (Nov-Jan)</label>
-      <label><input type="checkbox" class="season" value="Spring" checked> Spring (Feb-Apr)</label>
-      <label><input type="checkbox" class="season" value="Summer" checked> Summer (May-Jul)</label>
-      <label><input type="checkbox" class="season" value="Fall" checked> Fall (Aug-Oct)</label>
-    </div>
-  </div>
-
-  <!-- Write up tab -->
-  <div id="writeupBtnContainer">
-    <button id="writeupBtn" class="dropdown-toggle">
-      About Us
-    </button>
-  </div>
-
-  
-
-  <!-- Brightness slider will be placed inside the chart box so it sits visually on top -->
-
-  <!-- Main map SVG -->
-  <svg></svg>
-
-  <!-- Page caption (bottom-center) -->
-  <div id="pageCaption" class="page-caption">This interactive visualization is based on NASA MODIS Fire Data within the United States from November 2024 to October 2025.<br>The data has been truncated to only include fires with brightness values in Kelvin that are at least 325.</div>
-
-<!-- Small brightness-by-month chart (bottom-right) -->
-<div id="chartBox">
-  <!-- collapse / expand button for the chart -->
-  <button
-    id="chartToggleBtn"
-    class="chart-toggle"
-    aria-expanded="true"
-    aria-label="Collapse brightness chart"
-    type="button"
-  >
-    −
-  </button>
-
-  <!-- place the brightness slider inside the chart box so it sits visually on top -->
-  <div class="slider-box" id="brightnessControl">
-    <label class="slider-label">Min Brightness: <span id="brightnessValue">325</span></label>
-    <!-- discrete slider with 25-unit notches from 325 to 500 -->
-    <input type="range" id="brightnessSlider" class="slider-range"
-           min="325" max="500" step="25" value="325" list="brightnessTicks">
-    <datalist id="brightnessTicks">
-      <option value="325"></option>
-      <option value="350"></option>
-      <option value="375"></option>
-      <option value="400"></option>
-      <option value="425"></option>
-      <option value="450"></option>
-      <option value="475"></option>
-      <option value="500"></option>
-    </datalist>
-  </div>
-  
-    <!-- chart title placed below the slider and above the svg chart -->
-    <div id="chartTitleHtml" class="chart-title-html" aria-hidden="false">
-      <div class="chart-title-line">Avg Brightness per Month</div>
-      <div class="chart-title-sub">given Min Brightness Filter & Selected States</div>
-    </div>
-      <!-- increased SVG height to ensure x-axis labels and bottom padding are visible -->
-      <svg id="chartSvg" width="360" height="250" aria-label="Average brightness by month"></svg>
-  </div>
-
-  <!-- move the video button under the write-up button for layout reasons -->
-  <div id="videoBtnContainer">
-    <button id="videoBtn" class="video-btn">Watch Video</button>
-  </div>
-
-  <!-- Tooltip element for point hover -->
-  <div id="tooltip" class="tooltip" aria-hidden="true"></div>
-  <script src="script.js"></script>
+  <script>
+    window.location.href = 'landing.html';
+  </script>
 </body>
 </html>
 
