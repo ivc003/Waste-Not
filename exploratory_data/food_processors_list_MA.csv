@@ -1,0 +1,59 @@
+Number,Category,Company,Address,Cit,ZIP,Contact,Phone,lat,long
+1,Compost,redacted,redacted,Westfield,,redacted,redacted,42.14761666,-72.72179579
+2,Animal Feed,redacted,redacted,Bolton,,redacted,redacted,42.431229,-71.56237538
+3,Compost,redacted,redacted,Amesbury,,redacted,redacted,42.85605885,-70.93121852
+4,Compost,redacted,redacted,Whately,,redacted,redacted,42.43501625,-72.67855369
+5,Digester,redacted,redacted,Hatfield,,redacted,redacted,42.40832609,-72.59582346
+6,Compost,redacted,redacted,by-the-Sea,,redacted,redacted,42.59405984,-70.76616222
+7,Compost,redacted,redacted,Groton,,redacted,redacted,42.62323956,-71.50079702
+8,Compost,redacted,redacted,Framingham,,redacted,redacted,42.32899248,-71.48184379
+9,Compost,redacted,redacted,Hamilton,,redacted,redacted,42.63663952,-70.88569734
+10,Compost,redacted,redacted,Falmouth,,redacted,redacted,41.61496752,-70.62403292
+11,Compost,redacted,redacted,Williamstown,,redacted,redacted,42.6409043,-73.27345849
+12,Compost,redacted,redacted,Orange,,redacted,redacted,42.57030829,-72.2981587
+13,Digester,redacted,redacted,New Bedford,,redacted,redacted,41.72513661,-70.97807049
+14,Compost,redacted,redacted,Northborough,,redacted,redacted,42.33493099,-71.68336496
+15,Animal Feed,redacted,redacted,Lakeville,,redacted,redacted,41.84240821,-70.97909252
+16,Animal Feed,redacted,redacted,Dartmouth,,redacted,redacted,41.66329514,-71.05519473
+16,Compost,redacted,redacted,Dartmouth,,redacted,redacted,41.66329514,-71.05519473
+17,Processor,redacted,redacted,Westborough,,redacted,redacted,42.25565849,-71.59160748
+18,Compost,redacted,redacted,Westminster,,redacted,redacted,42.5381357,-71.84961356
+19,Compost,redacted,redacted,Tisbury,,redacted,redacted,41.43843723,-70.63213125
+19,Animal Feed,redacted,redacted,Tisbury,,redacted,redacted,41.43843723,-70.63213125
+20,Compost,redacted,redacted,Wrentham,,redacted,redacted,42.0762218,-71.30329922
+21,Compost,redacted,redacted,Barre,,redacted,redacted,42.41721644,-72.12501966
+22,Compost,redacted,redacted,Medway,,redacted,redacted,42.14180765,-71.4054046
+23,Animal Feed,redacted,redacted,Goshen,,redacted,redacted,42.463189,-72.8374377
+24,Compost,redacted,redacted,Dalton,,redacted,redacted,42.48721312,-73.13772814
+25,Compost,redacted,redacted,Dartmouth,,redacted,redacted,41.59058803,-71.02369732
+26,Animal Feed,redacted,redacted,Tewksbury,,redacted,redacted,42.59875463,-71.1825184
+26,Compost,redacted,redacted,Tewksbury,,redacted,redacted,42.59875463,-71.1825184
+27,Compost,redacted,redacted,Greenfield,,redacted,redacted,42.62525765,-72.62439592
+28,Compost,redacted,redacted,Westminster,,redacted,redacted,42.58068377,-71.87662246
+29,Compost,redacted,redacted,South Lee,,redacted,redacted,42.280302,-73.23450296
+30,Compost,redacted,redacted,Needham,,redacted,redacted,42.27677688,-71.26034622
+31,Compost,redacted,redacted,Norton,,redacted,redacted,42.00895761,-71.16379044
+32,Compost,redacted,redacted,Lowell,,redacted,redacted,42.62509526,-71.29814916
+33,Processor,redacted,redacted,New Bedford,,redacted,redacted,41.66001453,-70.94814229
+34,Digester,redacted,redacted,Sheffield,,redacted,redacted,42.06888984,-73.31879505
+35,Animal Feed,redacted,redacted,Norton,,redacted,redacted,42.21888267,-72.57048865
+36,Animal Feed,redacted,redacted,South Hadley,,redacted,redacted,42.21884294,-72.57044573
+37,Digester,redacted,redacted,Granville,,redacted,redacted,42.04387488,-72.86283599
+38,Compost,redacted,redacted,Saugus,,redacted,redacted,42.50009472,-71.03103154
+39,Compost,redacted,redacted,Somers,,redacted,redacted,41.68719075,-71.15936409
+40,Compost,redacted,redacted,Sheffield,,redacted,redacted,42.15725768,-73.3661263
+41,Compost,redacted,redacted,Dartmouth,,redacted,redacted,41.54358965,-70.95607038
+42,Processor,redacted,redacted,North Grafton,,redacted,redacted,42.23598266,-71.72920442
+43,Animal Feed,redacted,redacted,Swansea,,redacted,redacted,41.7751675,-71.21746767
+44,Animal Feed,redacted,redacted,Holden,,redacted,redacted,42.35962861,-71.81676675
+44,Compost,redacted,redacted,Holden,,redacted,redacted,42.35962861,-71.81676675
+45,Processor,redacted,redacted,Agawam,,redacted,redacted,42.08349566,-72.61573152
+46,Digester,redacted,redacted,Deerfield,,redacted,redacted,42.52073718,-72.61535283
+47,Digester,redacted,redacted,Hadley,,redacted,redacted,42.29453312,-72.60132569
+48,Digester,redacted,redacted,Haverhill,,redacted,redacted,42.74778108,-71.10586866
+49,Digester,redacted,redacted,Rutland,,redacted,redacted,42.38795075,-71.91907069
+50,Digester,redacted,redacted,Spencer,,redacted,redacted,42.27557759,-72.0159768
+51,Processor,redacted,redacted,Charlestown,,redacted,redacted,42.38322364,-71.04994829
+52,Compost,redacted,redacted,Nantucket,,redacted,redacted,41.28080675,-70.165834
+53,Animal Feed,redacted,redacted,Tyngsboro,,redacted,redacted,42.66865264,-71.39141756
+53,Compost,redacted,redacted,Tyngsboro,,redacted,redacted,42.66865264,-71.39141756
